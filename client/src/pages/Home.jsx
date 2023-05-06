@@ -1,6 +1,7 @@
 import { Entity, Scene } from "aframe-react";
 
 export default function HomePage() {
+    return (
         <Scene>
         <a-assets>
           <a-asset-item id="my-model" src="/car/scene.gltf"></a-asset-item>
@@ -12,11 +13,6 @@ export default function HomePage() {
             id="groundTexture"
             src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" />
         </a-assets>
-        <Entity
-          gltf-model="#my-model"
-          scale={{ x: 1, y: 1, z: 1 }}
-          position={{ x: 0, y: -0.1, z: -10 }}
-        />
         <Entity
           gltf-model="#my-model"
           scale={{ x: 1, y: 1, z: 1 }}
@@ -56,4 +52,5 @@ export default function HomePage() {
         />
         <Entity camera position={{ x: 0, y: 1.6, z: 0 }} />
       </Scene>
+    )
 }
