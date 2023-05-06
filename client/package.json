@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "aframe": "^1.4.2",
+    "aframe-react": "^4.4.0",
+    "moralis": "^2.19.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
