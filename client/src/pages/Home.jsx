@@ -4,8 +4,6 @@ export default function HomePage() {
     return (
         <Scene>
         <a-assets>
-          <a-asset-item id="my-model" src="/car/scene.gltf"></a-asset-item>
-          <a-asset-item id="car-model" src="/cybercar/scene.gltf"></a-asset-item>
           <img
             id="skyTexture"
             src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" />
@@ -25,8 +23,6 @@ export default function HomePage() {
         <a-light type="point" distance="5" color="white" position="0 2.2 -14" angle="-100" intensity="0.8"></a-light>
         <a-light type="point" distance="5" color="white" position="2 2.2 -14" angle="120" intensity="0.5"></a-light>
         <a-cone position="0 0 -3" color="tomato" radius-bottom="2" radius-top="0.5"></a-cone>
-        {/* <a-light type="point" color="white" position="0 2 -14"></a-light>
-        <a-light type="point" color="white" position="0 2 -14"></a-light> */}
         <Entity
           geometry={{ primitive: "box" }}
           material={{ color: "blue" }}
