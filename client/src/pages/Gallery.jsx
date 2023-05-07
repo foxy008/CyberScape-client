@@ -17,7 +17,7 @@ export default function HomePage() {
     return <>
         {
           !rooms ? null : console.log(rooms)
-          // Buat cek apakah rooms dapet di fetch, uncomment kalo ngak mau console
+          // Buat cek apakah rooms dapet di fetch, uncomment kalo ngak mau keliatan di console
         }
 
         <Scene>

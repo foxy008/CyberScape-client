@@ -16,7 +16,14 @@ export default function Home() {
     }, [])
 
     return <>
-        { !topNFTs ? null: console.log({ topNFTs, profile })}
+        {
+            !topNFTs ? null: console.log(topNFTs)
+            // Buat cek apakah topNFTs dapet di fetch, uncomment kalo ngak mau keliatan di console
+        }
+        {
+            !profile ? null: console.log(profile)
+            // Buat cek apakah profile dapet di fetch, uncomment kalo ngak mau keliatan di console
+        }
         <GalaxyBackground>
             <ShareButtons title="Ini NFT 1" url="https://google.com/nft1" />
         </GalaxyBackground>
