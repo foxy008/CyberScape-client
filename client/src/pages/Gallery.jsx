@@ -1,9 +1,10 @@
-import Room from "./Room";
+
 import { useRef, useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUser } from "../actions/usersCreators";
 import { getAllRooms } from "../actions/roomsCreators";
+import Room from "../components/Room";
 
 export default function Gallery() {
   const dispatch = useDispatch();
