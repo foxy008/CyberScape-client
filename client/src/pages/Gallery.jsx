@@ -1,7 +1,25 @@
 import { Entity, Scene } from "aframe-react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUser } from "../actions/usersCreators";
+import { getAllRooms } from "../actions/roomsCreators";
 
 export default function HomePage() {
-    return (
+    const dispatch = useDispatch();
+    const rooms = useSelector(state => state.rooms);
+    const profile = useSelector(state => state.user);
+
+    useEffect(() => {
+        dispatch(getAllRooms())
+        localStorage.access_token ? dispatch(fetchUser()) : null;
+    }, [])
+
+    return <>
+        {
+          !rooms ? null : console.log(rooms)
+          // Buat cek apakah rooms dapet di fetch, uncomment kalo ngak mau console
+        }
+
         <Scene>
         <a-assets>
           <a-asset-item id="my-model" src="/car/scene.gltf"></a-asset-item>
@@ -55,5 +73,5 @@ export default function HomePage() {
         />
         <Entity camera position={{ x: 0, y: 1.6, z: 0 }} />
       </Scene>
-    )
+    </>
 }
