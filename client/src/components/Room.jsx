@@ -1,22 +1,14 @@
-import { useRef, useState } from "react";
-import { useEffect } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUser } from "../actions/usersCreators";
-import { getAllRooms, getSelectedRoom } from "../actions/roomsCreators";
-import DataNFT from "../pages/AllGallery";
+
 
 export default function Room({ position, nfts }) {
-  // nfts[2]? console.log(nfts[2]) : console.log(null);
-  // console.log(nfts?.RoomNFTs[0].NFT.imageUrl);
+
   const dispatch = useDispatch();
   const rooms = useSelector(state => state.rooms);
   const profile = useSelector(state => state.user);
   console.log(nfts?.RoomNFTs[0].NFT.imageUrl , 'by id')
 
-  // useEffect(() => {
-  //   dispatch(getSelectedRoom(0))
-  //   localStorage.access_token ? dispatch(fetchUser()) : null;
-  // }, [])
   return (
     <>
       <a-entity position={position} rotation="0 0 0">

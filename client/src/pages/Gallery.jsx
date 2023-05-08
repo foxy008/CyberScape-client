@@ -1,11 +1,9 @@
-
 import { useRef, useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUser } from "../actions/usersCreators";
 import { getAllRooms } from "../actions/roomsCreators";
 import Room from "../components/Room";
-import DataNFT from "./AllGallery";
 
 export default function Gallery() {
   const dispatch = useDispatch();
@@ -33,7 +31,7 @@ export default function Gallery() {
 
   function handleElevatorClick(view) {
     if (view === "up") {
-      setCameraY(9.6);
+      setCameraY(8.6);
     }
 
     if (view === "down") {
@@ -43,10 +41,6 @@ export default function Gallery() {
 
   const [cameraY, setCameraY] = useState(1.6);
   const elevatorRef = useRef(null);
-
-  function handleElevatorClick() {
-    setCameraY(9.6);
-  }
 
   return <>
     {
@@ -69,7 +63,7 @@ export default function Gallery() {
           id="wallTexture"
           src="/assets/output.jpg" />
       </a-assets>
-      <a-camera position={`22 ${cameraY} 16`} rotation="0 90 0">
+      <a-camera position={`22 ${cameraY} 16`} rotation="0 -90 0">
         {/* <a-cursor raycaster="objects: .clickable"></a-cursor> */}
       </a-camera>
       <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
@@ -101,9 +95,9 @@ export default function Gallery() {
       <Room position="0 0 16" nfts={rooms[26]}/>{/* Nakamigos */}
       <Room position="0 0 32" nfts={rooms[44]}/>{/* Otherdeed */}
       <Room position="0 0 48" nfts={rooms[54]}/>{/* Azuki */}
-      <Room position="0 7 -16" nfts={rooms[64]}/>
-      <Room position="0 7 0" />
-      <Room position="0 7 16" />
+      <Room position="0 7 -16" nfts={rooms[64]}/>{/* MAYC */}
+      <Room position="0 7 0" nfts={rooms[74]} />{/* BAYC */}
+      <Room position="0 7 16" nfts={rooms[84]} />{/* BAYC */}
       <Room position="0 7 32" />
       <Room position="0 7 48" />
       <a-entity environment="preset: tron; fog: 0.8; dressingAmount: 50; seed: 300; playArea: 5"></a-entity>
