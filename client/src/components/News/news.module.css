@@ -1,9 +1,9 @@
-.allCollections {
+.news {
     width: 100%;
     padding: 32px 150px;
     min-height: 367px;
     display: flex;
-    background: rgb(196, 231, 239);
+    color: #fff;
 }
 
 .container {
@@ -16,4 +16,10 @@
     flex-wrap: wrap;
     gap: 16px;
     padding-top: 15px;
+}
+
+.button {
+    display: flex;
+    justify-content: right;
+    padding-top: 20px;
 }

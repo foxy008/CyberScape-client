@@ -31,8 +31,8 @@ export default function CollectionList() {
           />
         </div>
         <div className={styles.button}>
-            <button>
-                Enter Virtual Gallery
+            <button className={styles.btn}>
+                Enter Top Gallery
             </button>
         </div>
       </div>

@@ -1,0 +1,30 @@
+.card {
+    display: inline-flex;
+    flex-direction: column;
+    max-width: 262px;
+}
+
+.card img {
+    border-radius: 8px;
+    width: 262px;
+    height: 369px;
+}
+
+.card .description {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    margin-top: 16px;
+}
+
+.card h1 {
+    color: rgb(254, 254, 204);
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.card p {
+    color: rgb(254, 254, 204);
+    font-weight: 700;
+    font-size: 18px;
+}
