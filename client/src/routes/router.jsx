@@ -56,31 +56,6 @@ const router = createBrowserRouter([
         element: <TopGallery />
       }
     ]
-  },{
-    loader: () => {
-      const accessToken = localStorage.getItem('access_token')
-
-      if (accessToken) {
-          return redirect('/')
-      }
-
-      return null;
-    },
-    path: '/login',
-    element: <Login />
-  },
-  {
-    loader: () => {
-      const accessToken = localStorage.getItem('access_token')
-
-      if (accessToken) {
-          return redirect('/')
-      }
-
-      return null;
-    },
-    path: '/register',
-    element: <Register />
   }
 ])
 
