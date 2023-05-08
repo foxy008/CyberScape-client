@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUser } from "../actions/usersCreators";
 import { getAllRooms } from "../actions/roomsCreators";
 import Room from "../components/Room";
+import DataNFT from "./AllGallery";
 
 export default function Gallery() {
   const dispatch = useDispatch();
@@ -13,8 +14,32 @@ export default function Gallery() {
 
   useEffect(() => {
     dispatch(getAllRooms())
+    function handleKeyDown(event) {
+      if (event.code === "Space" && !localStorage.getItem("camera")) {
+        handleElevatorClick("up")
+        localStorage.setItem("camera", "up")
+      }
+      else if (event.code === "Space" && localStorage.getItem("camera")) {
+        handleElevatorClick("down")
+        localStorage.removeItem("camera")
+      }
+    }
     localStorage.access_token ? dispatch(fetchUser()) : null;
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, [])
+
+  function handleElevatorClick(view) {
+    if (view === "up") {
+      setCameraY(9.6);
+    }
+
+    if (view === "down") {
+      setCameraY(1.6)
+    }
+  }
 
   const [cameraY, setCameraY] = useState(1.6);
   const elevatorRef = useRef(null);
@@ -44,8 +69,8 @@ export default function Gallery() {
           id="wallTexture"
           src="/assets/output.jpg" />
       </a-assets>
-      <a-camera position={`22 ${cameraY} 16`} >
-        <a-cursor raycaster="objects: .clickable"></a-cursor>
+      <a-camera position={`22 ${cameraY} 16`} rotation="0 90 0">
+        {/* <a-cursor raycaster="objects: .clickable"></a-cursor> */}
       </a-camera>
       <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
 
@@ -71,12 +96,12 @@ export default function Gallery() {
       <a-box position="18 0 32" width="0.5" height="" depth="3"></a-box>
       <a-box position="18 0 48" width="0.5" height="" depth="3"></a-box>
       <a-box position="18 0 -16" width="0.5" height="" depth="3"></a-box>
-      <Room position="0 0 -16" nfts={rooms[2]}/>
-      <Room position="0 0 0" />
-      <Room position="0 0 16" />
-      <Room position="0 0 32" />
-      <Room position="0 0 48" />
-      <Room position="0 7 -16" />
+      <Room position="0 0 -16" nfts={rooms[3]}/>{/* Nakamigos */}
+      <Room position="0 0 0" nfts={rooms[34]}/> {/* Clone X */}
+      <Room position="0 0 16" nfts={rooms[26]}/>{/* Nakamigos */}
+      <Room position="0 0 32" nfts={rooms[44]}/>{/* Otherdeed */}
+      <Room position="0 0 48" nfts={rooms[54]}/>{/* Azuki */}
+      <Room position="0 7 -16" nfts={rooms[64]}/>
       <Room position="0 7 0" />
       <Room position="0 7 16" />
       <Room position="0 7 32" />
