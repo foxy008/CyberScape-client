@@ -1,10 +1,9 @@
-
+import Room from "../components/Room";
 import { useRef, useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUser } from "../actions/usersCreators";
 import { getAllRooms } from "../actions/roomsCreators";
-import Room from "../components/Room";
 
 export default function Gallery() {
   const dispatch = useDispatch();
@@ -18,15 +17,43 @@ export default function Gallery() {
   const [cameraY, setCameraY] = useState(1.6);
   const elevatorRef = useRef(null);
 
-  function handleElevatorClick() {
-    setCameraY(3.0);
+  
+  
+  function handleElevatorClick(view) {
+    if (view === "up") {
+      setCameraY(5.2);
+    }
+
+    if (view === "down") {
+      setCameraY(1.6)
+    }
   }
+
+  useEffect(() => {
+  function handleKeyDown(event) {
+    if (event.code === "Space" && !localStorage.getItem("camera")) {
+      handleElevatorClick("up")
+      localStorage.setItem("camera", "up")
+    }
+    else if (event.code === "Space" && localStorage.getItem("camera")) {
+      handleElevatorClick("down")
+      localStorage.removeItem("camera")
+    }
+
+    
+  }
+  window.addEventListener("keydown", handleKeyDown);
+  return () => {
+    window.removeEventListener("keydown", handleKeyDown);
+  };
+}, []);
+
   return <>
     {
       !rooms ? null : console.log(rooms)
       // Buat cek apakah rooms dapet di fetch, uncomment kalo ngak mau console
     }
-    <a-scene>
+    <a-scene >
       <a-assets>
         <img
           id="skyTexture"
@@ -38,7 +65,7 @@ export default function Gallery() {
           id="wallTexture"
           src="/assets/output.jpg" />
       </a-assets>
-      <a-camera position={`-20 ${cameraY} 20`} >
+      <a-camera position={`-20 ${cameraY} 30`}>
         <a-cursor raycaster="objects: .clickable"></a-cursor>
       </a-camera>
       <a-sphere
@@ -47,8 +74,8 @@ export default function Gallery() {
         position="5 2 25"
         width="0.3"
         height="1"
-        scale="0.1 0.1 0.1"
-        events={{ click: handleElevatorClick }}
+        scale="1 1 1"
+        events={{ onclick: ()=> {handleElevatorClick} }}
       ></a-sphere>
       <a-box position="5 0 0" width="0.5" height="" depth="3"></a-box>
       <a-box position="5 0 10" width="0.5" height="" depth="3"></a-box>

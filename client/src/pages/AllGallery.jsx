@@ -7,11 +7,19 @@ export default function Gallery() {
   const elevatorRef = useRef(null);
 
   function handleElevatorClick() {
-    setCameraY(3.0);
+    // setCameraY(3.0);
+    elevatorRef.current.setAttributes('position', '0 3 0')
   }
   return (
     <>
-      <a-scene>
+      {/* <a-scene> */}
+        <a-entity geometry="primitive: box"
+          material="color: #F44336"
+          position="0 1.5 -3"
+          onClick="moveUp"
+          id="box"
+          >   
+        </a-entity>
         <a-assets>
           <img
             id="skyTexture"
@@ -61,8 +69,9 @@ export default function Gallery() {
         <Room position="-2 5 40" />
         <Room position="12 5 40" />
         <a-entity environment="preset: tron; dressingAmount: 50; seed: 9; playArea: 4"></a-entity>
-      </a-scene>
-
+      {/* </a-scene> */}
     </>
+  
   )
 }
+
