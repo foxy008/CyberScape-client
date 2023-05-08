@@ -3,6 +3,7 @@ import GalaxyBackground from "../components/GalaxyBackground";
 import ShareButtons from "../components/ShareButtons";
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
+import News from '../components/News'
 import CollectionList from '../components/CollectionList'
 import RecentCollection from '../components/RecentCollection'
 import { useDispatch, useSelector } from "react-redux";
@@ -30,7 +31,6 @@ export default function Home() {
             // Buat cek apakah profile dapet di fetch, uncomment kalo ngak mau keliatan di console
         }
         <GalaxyBackground>
-            <Navbar />
             <Banner />
             <CollectionList />
             <RecentCollection />
