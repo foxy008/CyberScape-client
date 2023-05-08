@@ -14,8 +14,32 @@ export default function Gallery() {
 
   useEffect(() => {
     dispatch(getAllRooms())
+    function handleKeyDown(event) {
+      if (event.code === "Space" && !localStorage.getItem("camera")) {
+        handleElevatorClick("up")
+        localStorage.setItem("camera", "up")
+      }
+      else if (event.code === "Space" && localStorage.getItem("camera")) {
+        handleElevatorClick("down")
+        localStorage.removeItem("camera")
+      }
+    }
     localStorage.access_token ? dispatch(fetchUser()) : null;
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, [])
+
+  function handleElevatorClick(view) {
+    if (view === "up") {
+      setCameraY(9.6);
+    }
+
+    if (view === "down") {
+      setCameraY(1.6)
+    }
+  }
 
   const [cameraY, setCameraY] = useState(1.6);
   const elevatorRef = useRef(null);
