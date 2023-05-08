@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import GalaxyBackground from "../components/GalaxyBackground";
 import ShareButtons from "../components/ShareButtons";
-import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import News from '../components/News'
 import CollectionList from '../components/CollectionList'
