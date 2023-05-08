@@ -27,7 +27,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/profile',
-        loader: () => localStorage.access_Token ? null : redirect('/login'),
+        loader: () => {
+          const accessToken = localStorage.getItem('access_token')
+
+          if (!accessToken) {
+              return redirect('/')
+          }
+
+          return null;
+        },
         element: <Profile />
       },
       {
@@ -37,20 +45,40 @@ const router = createBrowserRouter([
       {
         path: '/top',
         loader: () => {
-          // dispatch(fetchUser())
-          // .then(() => profile.quota > 0 ? null: redirect('/'))
-          // .catch(error => console.log(error))
+          const accessToken = localStorage.getItem('access_token')
+
+          if (!accessToken) {
+              return redirect('/')
+          }
+
+          return null;
         },
         element: <TopGallery />
       }
     ]
   },{
-    loader: () => localStorage.access_Token ? redirect('/') : null,
+    loader: () => {
+      const accessToken = localStorage.getItem('access_token')
+
+      if (accessToken) {
+          return redirect('/')
+      }
+
+      return null;
+    },
     path: '/login',
     element: <Login />
   },
   {
-    loader: () => localStorage.access_Token ? redirect('/') : null,
+    loader: () => {
+      const accessToken = localStorage.getItem('access_token')
+
+      if (accessToken) {
+          return redirect('/')
+      }
+
+      return null;
+    },
     path: '/register',
     element: <Register />
   }
