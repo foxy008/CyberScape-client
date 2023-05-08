@@ -44,21 +44,15 @@ export default function Gallery() {
 
   return <>
     {
-      !rooms ? null : (!rooms[2] ? null: console.log(rooms[2].RoomNFTs, '<-- rooms'))
+      !rooms ? null : (!rooms[2] ? null : console.log(rooms[2].RoomNFTs, '<-- rooms'))
       // Buat cek apakah rooms dapet di fetch, uncomment kalo ngak mau console
     }
     {
-      !profile ? null: console.log(profile, '<-- profile')
+      !profile ? null : console.log(profile, '<-- profile')
       // Buat cek apakah profile dapet di fetch, uncomment kalo ngak mau keliatan di console
     }
-    <a-scene>
+    <a-scene stats debug>
       <a-assets>
-        <img
-          id="skyTexture"
-          src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" />
-        <img
-          id="groundTexture"
-          src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" />
         <img
           id="wallTexture"
           src="/assets/output.jpg" />
@@ -68,39 +62,39 @@ export default function Gallery() {
       </a-camera>
       <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
 
-      <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
-        <a-sphere position="18 9 0" color="mediumseagreen"></a-sphere>
-</a-entity>
-
       <a-box material="opacity: 0.5" rotation="0 90 0" position="23 7 16" width="80" height="14" depth="0.1"></a-box>
       <a-box material="opacity: 0.5" rotation="0 90 0" position="15 7.5 37" width="38" height="1" depth="0.1"></a-box>
       <a-box material="opacity: 0.5" rotation="0 90 0" position="15 7.5 -5" width="38" height="1" depth="0.1"></a-box>
       <a-box material="opacity: 0.5" rotation="0 0 0" position="17 7 -24" width="12" height="14" depth="0.1"></a-box>
       <a-box material="opacity: 0.5" rotation="0 0 0" position="17 7 56" width="12" height="14" depth="0.1"></a-box>
-      <a-box material="opacity: 0.9" rotation="0 0 0" position="21.5 7 18" width="3" height="14" depth="0.1"></a-box>
       <a-box material="opacity: 0.5" rotation="0 0 0" position="17.5 7.5 18" width="5" height="1" depth="0.1"></a-box>
       <a-box material="opacity: 0.5" rotation="0 0 0" position="17.5 7.5 14" width="5" height="1" depth="0.1"></a-box>
+      <a-box material="opacity: 0.9" rotation="0 0 0" position="21.5 7 18" width="3" height="14" depth="0.1"></a-box>
       <a-box material="opacity: 0.9" rotation="0 0 0" position="21.5 7 14" width="3" height="14" depth="0.1"></a-box>
-      <a-box animation="property: position; to: 20 1 14.5; dur: 2000; easing: linear; startEvents: mouseenter;" material="opacity: 1" rotation="0 90 0" position="20 1 15.5" width="1" height="3" depth="0.1"></a-box>
-      <a-box animation="property: position; to: 20 1 17.5; dur: 2000; easing: linear; startEvents: mouseenter;" material="opacity: 1" rotation="0 90 0" position="20 1 16.5" width="1" height="3" depth="0.1"></a-box>
+
+      <a-box animation__1="property: position; to: 20 1 14.5; dur: 3000; easing: linear; startEvents: mouseleave;"
+        animation__2="property: position; to: 20 1 16.5; dur: 3000; easing: linear; startEvents: animationcomplete__1;" material="opacity: 1" rotation="0 90 0" position="20 1 16.5" width="1" height="3" depth="0.1"></a-box>
+      <a-box animation__1="property: position; to: 20 1 14.5; dur: 3000; easing: linear; startEvents: mouseleave;"
+        animation__2="property: position; to: 20 1 15.5; dur: 3000; easing: linear; startEvents: animationcomplete__1;" material="opacity: 1" rotation="0 90 0" position="20 1 15.5" width="1" height="3" depth="0.1"></a-box>
+
       <a-box src="#wallTexture" rotation="90 0 90" position="18 14 16" width="84" height="14" depth="0.1"></a-box>
       <a-box src="#wallTexture" rotation="90 0 90" position="13 7 16" width="80" height="4" depth="0.1"></a-box>
       <a-box src="#wallTexture" rotation="90 0 90" position="17.5 7 16" width="4" height="5" depth="0.1"></a-box>
-      <a-box position="18 0 0" width="0.5" height="" depth="3"></a-box>
+      <a-box color="black" position="18 0 0" width="0.5" height="" depth="3"></a-box>
       <a-box position="18 0 32" width="0.5" height="" depth="3"></a-box>
       <a-box position="18 0 48" width="0.5" height="" depth="3"></a-box>
       <a-box position="18 0 -16" width="0.5" height="" depth="3"></a-box>
-      <Room position="0 0 -16" nfts={rooms[3]}/>{/* Nakamigos */}
-      <Room position="0 0 0" nfts={rooms[34]}/> {/* Clone X */}
-      <Room position="0 0 16" nfts={rooms[26]}/>{/* Nakamigos */}
-      <Room position="0 0 32" nfts={rooms[44]}/>{/* Otherdeed */}
-      <Room position="0 0 48" nfts={rooms[54]}/>{/* Azuki */}
-      <Room position="0 7 -16" nfts={rooms[64]}/>{/* MAYC */}
-      <Room position="0 7 0" nfts={rooms[74]} />{/* BAYC */}
-      <Room position="0 7 16" nfts={rooms[84]} />{/* BAYC */}
-      <Room position="0 7 32" />
-      <Room position="0 7 48" />
-      <a-entity environment="preset: tron; fog: 0.8; dressingAmount: 50; seed: 300; playArea: 5"></a-entity>
+      <Room position="0 0 -16" nfts={rooms[2]} />{/* Beanz */}
+      <Room position="0 0 0" nfts={rooms[12]} /> {/* Bored Ape Kennel Club */}
+      <Room position="0 0 16" nfts={rooms[11]} />{/* Nakamigos */}
+      <Room position="0 0 32" nfts={rooms[5]} />{/* Otherdeed */}
+      <Room position="0 0 48" nfts={rooms[6]} />{/* Clone-X */}
+      <Room position="0 7 -16" nfts={rooms[7]} />{/* Azuki */}
+      <Room position="0 7 0" nfts={rooms[8]} />{/* MAYC */}
+      <Room position="0 7 16" nfts={rooms[9]} />{/* BAYC */}
+      <Room position="0 7 32" nfts={rooms[10]} />{/* DeGods */}
+      <Room position="0 7 48" nfts={rooms[13]} />{/* Pudgy Penguins */}
+      <a-entity environment="preset: tron; fog: 0.9; dressingAmount: 50; seed: 300; playArea: 5"></a-entity>
     </a-scene>
 
   </>
