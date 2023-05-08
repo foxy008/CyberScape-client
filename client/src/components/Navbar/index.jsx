@@ -2,15 +2,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from './navbar.module.css'
 import { useEffect } from 'react';
 import { Link } from "react-router-dom";
-import { fetchProfile } from '../../helpers/userMethods';
-import { useState } from 'react';
+import Login from '../../pages/Login';
 
 export default function Navbar() {
   const profile = useSelector(state => state.user);
   const dispatch = useDispatch();
-  const [isLoggedOut, setIsLoggedOut] = useState(null);
 
-  function handleLogout(e) {
+  function handleLogout() {
     localStorage.removeItem('access_token')
 
     dispatch({
@@ -49,11 +47,12 @@ export default function Navbar() {
             </Link>
             {
               !profile.firstName ?
-              <Link to='/login'>
-                <button className="btn">
-                  Log In
-                </button>
-              </Link>
+              // <Link to='/login'>
+              //   <button className="btn">
+              //     Log In
+              //   </button>
+              // </Link>
+              <label htmlFor="login-modal" className="btn">Log In</label>
               : <div className="dropdown">
               <label tabIndex={0} className="btn m-1">{ profile.firstName } {profile.lastName} </label>
                 <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
@@ -87,6 +86,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      <Login />
     </>
   );
 }
