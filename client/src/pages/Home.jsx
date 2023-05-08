@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import GalaxyBackground from "../components/GalaxyBackground";
 import ShareButtons from "../components/ShareButtons";
+import Navbar from '../components/Navbar'
+import Banner from '../components/Banner'
+import CollectionList from '../components/CollectionList'
+import RecentCollection from '../components/RecentCollection'
 import { useDispatch, useSelector } from "react-redux";
 import getTopNFTs from "../actions/nftsCreators";
 import { fetchUser } from "../actions/usersCreators";
@@ -25,6 +29,11 @@ export default function Home() {
             // Buat cek apakah profile dapet di fetch, uncomment kalo ngak mau keliatan di console
         }
         <GalaxyBackground>
+            <Navbar />
+            <Banner />
+            <CollectionList />
+            <RecentCollection />
+            <News />
             <ShareButtons title="Ini NFT 1" url="https://google.com/nft1" />
         </GalaxyBackground>
     </>;

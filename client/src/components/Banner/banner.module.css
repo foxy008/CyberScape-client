@@ -1,0 +1,92 @@
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+.bannerWrapper {
+  padding: 32px;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  padding: 0 32px;
+  height: 367px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  background-color: #191c29;
+  color: #fff;
+  justify-content: space-between;
+}
+
+.banner::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  position: absolute;
+  z-index: -1;
+  top: -6px;
+  left: -6px;
+  padding: 6px;
+  animation: spin 2.5s linear infinite;
+}
+
+.banner::after {
+  position: absolute;
+  content: "";
+  top: calc(367px / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(367px / 6));
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 22%,
+    #4e00c2
+  );
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+.container {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+
+.bannerLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.bannerRight {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
