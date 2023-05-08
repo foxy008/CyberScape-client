@@ -9,6 +9,6 @@ export default function getTopNFTs() {
                 payload: payload.data
             })
         })
-        .then(() => console.log('running getNFTs'))
+        // .then(() => console.log('running getNFTs'))
     }
 }

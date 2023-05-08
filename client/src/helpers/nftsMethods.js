@@ -6,7 +6,7 @@ export default async function fetchTopNFTs() {
     try {
         const test =  await axios.get(`${import.meta.env.VITE_SERVER_URL}/nfts`)
 
-        console.log(test);
+        // console.log(test);
 
         return test;
     } catch (error) {
