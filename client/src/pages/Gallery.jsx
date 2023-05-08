@@ -15,6 +15,7 @@ export default function Gallery() {
     dispatch(getAllRooms())
     localStorage.access_token ? dispatch(fetchUser()) : null;
   }, [])
+
   const [cameraY, setCameraY] = useState(1.6);
   const elevatorRef = useRef(null);
 
@@ -24,7 +25,7 @@ export default function Gallery() {
 
   return <>
     {
-      !rooms ? null : console.log(rooms[2]?.RoomNFTs[0].NFT.imageUrl)
+      !rooms ? null : (!rooms[2] ? null: console.log(rooms[2].RoomNFTs))
       // Buat cek apakah rooms dapet di fetch, uncomment kalo ngak mau console
     }
     <a-scene>
@@ -47,7 +48,7 @@ export default function Gallery() {
       <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
         <a-sphere position="18 9 0" color="mediumseagreen"></a-sphere>
 </a-entity>
-    
+
       <a-box material="opacity: 0.5" rotation="0 90 0" position="23 7 16" width="80" height="14" depth="0.1"></a-box>
       <a-box material="opacity: 0.5" rotation="0 90 0" position="15 7.5 37" width="38" height="1" depth="0.1"></a-box>
       <a-box material="opacity: 0.5" rotation="0 90 0" position="15 7.5 -5" width="38" height="1" depth="0.1"></a-box>
@@ -62,7 +63,6 @@ export default function Gallery() {
       <a-box src="#wallTexture" rotation="90 0 90" position="18 14 16" width="84" height="14" depth="0.1"></a-box>
       <a-box src="#wallTexture" rotation="90 0 90" position="13 7 16" width="80" height="4" depth="0.1"></a-box>
       <a-box src="#wallTexture" rotation="90 0 90" position="17.5 7 16" width="4" height="5" depth="0.1"></a-box>
-
       <a-box position="18 0 0" width="0.5" height="" depth="3"></a-box>
       <a-box position="18 0 32" width="0.5" height="" depth="3"></a-box>
       <a-box position="18 0 48" width="0.5" height="" depth="3"></a-box>
