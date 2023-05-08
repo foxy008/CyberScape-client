@@ -25,8 +25,12 @@ export default function Gallery() {
 
   return <>
     {
-      !rooms ? null : (!rooms[2] ? null: console.log(rooms[2].RoomNFTs))
+      !rooms ? null : (!rooms[2] ? null: console.log(rooms[2].RoomNFTs, '<-- rooms'))
       // Buat cek apakah rooms dapet di fetch, uncomment kalo ngak mau console
+    }
+    {
+      !profile ? null: console.log(profile, '<-- profile')
+      // Buat cek apakah profile dapet di fetch, uncomment kalo ngak mau keliatan di console
     }
     <a-scene>
       <a-assets>

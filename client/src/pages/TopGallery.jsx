@@ -1,4 +1,4 @@
-export default function TopGallery() {
+export default function TopGallery({ nfts }) {
     return <>
     </>
 }

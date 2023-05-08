@@ -12,16 +12,17 @@ export default function Home() {
 
     useEffect(() => {
         dispatch(getTopNFTs())
+        console.log(localStorage.access_token);
         localStorage.access_token ? dispatch(fetchUser()) : null;
     }, [])
 
     return <>
         {
-            !topNFTs ? null: console.log(topNFTs)
+            !topNFTs ? null: console.log(topNFTs, '<-- topNFTs')
             // Buat cek apakah topNFTs dapet di fetch, uncomment kalo ngak mau keliatan di console
         }
         {
-            !profile ? null: console.log(profile)
+            !profile ? null: console.log(profile, '<-- profile')
             // Buat cek apakah profile dapet di fetch, uncomment kalo ngak mau keliatan di console
         }
         <GalaxyBackground>

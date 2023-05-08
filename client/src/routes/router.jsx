@@ -45,10 +45,12 @@ const router = createBrowserRouter([
       }
     ]
   },{
+    loader: () => localStorage.access_Token ? redirect('/') : null,
     path: '/login',
     element: <Login />
   },
   {
+    loader: () => localStorage.access_Token ? redirect('/') : null,
     path: '/register',
     element: <Register />
   }

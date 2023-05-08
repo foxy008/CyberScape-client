@@ -1,12 +1,13 @@
 import { addFavorite, removeFavorite } from "../helpers/favoriteMethods";
 import { addRating, editRating } from "../helpers/ratingMethods";
-import fetchProfile from "../helpers/userMethods";
+import { fetchProfile } from "../helpers/userMethods";
 
 export function fetchUser() {
+    // console.log('run fetchUser');
     return function(dispatch) {
         fetchProfile()
         .then(payload => dispatch({
-            type: 'users/fetch',
+            type: 'user/fetch',
             payload
         }))
         .catch(error => {
