@@ -100,16 +100,11 @@ export default function Gallery() {
       <a-box position="18 0 48" width="0.5" height="" depth="3"></a-box>
       <a-box position="18 0 -16" width="0.5" height="" depth="3"></a-box>
     
-      <Room position="0 0 -16" nfts={rooms[2]} />{/* Beanz */}
-      <Room position="0 0 0" nfts={rooms[3]} /> {/* Bored Ape Kennel Club */}
-      <Room position="0 0 16" nfts={rooms[4]} />{/* Nakamigos */}
-      <Room position="0 0 32" nfts={rooms[5]} />{/* Otherdeed */}
-      <Room position="0 0 48" nfts={rooms[6]} />{/* Clone-X */}
-      <Room position="0 7 -16" nfts={rooms[7]} />{/* Azuki */}
-      <Room position="0 7 0" nfts={rooms[8]} />{/* MAYC */}
-      <Room position="0 7 16" nfts={rooms[9]} />{/* BAYC */}
-      <Room position="0 7 32" nfts={rooms[10]} />{/* DeGods */}
-      <Room position="0 7 48" nfts={rooms[11]} />{/* Pudgy Penguins */}
+      {rooms.map((el, i) => {
+        if(i < 10){
+          return <Room position={positions[i]} nfts={rooms[i+2]} ></Room>
+        }
+      })}
 
     </a-scene>
 
