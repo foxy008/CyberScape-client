@@ -7,7 +7,7 @@ import CollectionList from '../components/CollectionList'
 import RecentCollection from '../components/RecentCollection'
 import { useDispatch, useSelector } from "react-redux";
 import getTopNFTs from "../actions/nftsCreators";
-import { fetchUser } from "../actions/usersCreators";
+import { fetchUser, fetchUserAfterQuotaAdd } from "../actions/usersCreators";
 import { getAllRooms } from "../actions/roomsCreators";
 import { redirect, useSearchParams } from "react-router-dom";
 import axios from 'axios';
@@ -33,16 +33,13 @@ export default function Home() {
                     access_token: localStorage.access_token
                 }
             })
-            .then(response => redirect('/'))
-            .catch(error => redirect('/'))
+            .then(response =>  history.pushState(null, "", location.href.split("?")[0]))
+            .catch(error => history.pushState(null, "", location.href.split("?")[0]))
         }
 
         if (order_id && status_code) {
-            axios.post(`${import.meta.env.VITE_SERVER_URL}/users/add?order_id=${verify}`, null, {
-                headers: {
-                    access_token: localStorage.access_token
-                }
-            })
+            dispatch(fetchUserAfterQuotaAdd(order_id, status_code));
+            history.pushState(null, "", location.href.split("?")[0]);
         }
 
         dispatch(getTopNFTs());

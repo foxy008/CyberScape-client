@@ -1,6 +1,6 @@
 import styles from "./collectionlist.module.css";
 import CollectionCard from "../CollectionCard";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { fetchUserAfterQuotaReduce } from "../../actions/usersCreators";
 import { useDispatch, useSelector } from "react-redux";
 import getTopNFTs from "@/actions/nftsCreators";
@@ -10,11 +10,16 @@ export default function CollectionList() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const topNFTs = useSelector(state => state.nfts);
+  const profile = useSelector(state => state.user);
 
   function handleTop() {
+    const { quota } = profile;
+
+    if (quota > 0) {
+      navigate('/top')
+    }
+
     dispatch(fetchUserAfterQuotaReduce())
-    .then(() => navigate('/top'))
-    .catch(error => console.log(error));
   }
 
   useEffect(() => {
