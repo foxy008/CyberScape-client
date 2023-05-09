@@ -42,19 +42,7 @@ const router = createBrowserRouter([
         path: '/about',
         element: <AboutUs />
       },
-      {
-        path: '/top',
-        loader: () => {
-          const accessToken = localStorage.getItem('access_token')
-
-          if (!accessToken) {
-              return redirect('/')
-          }
-
-          return null;
-        },
-        element: <TopGallery />
-      }
+      
     ]
   },{
     loader: () => {
@@ -81,6 +69,19 @@ const router = createBrowserRouter([
     },
     path: '/register',
     element: <Register />
+  },
+  {
+    path: '/top',
+    loader: () => {
+      const accessToken = localStorage.getItem('access_token')
+
+      if (!accessToken) {
+          return redirect('/')
+      }
+
+      return null;
+    },
+    element: <TopGallery />
   }
 ])
 

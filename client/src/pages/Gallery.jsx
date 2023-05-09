@@ -41,6 +41,17 @@ export default function Gallery() {
 
   const [cameraY, setCameraY] = useState(1.6);
   const elevatorRef = useRef(null);
+  const positions = [
+    "0 0 -16"
+    , "0 0 0"
+    , "0 0 16"
+    , "0 0 32"
+    , "0 0 48"
+    , "0 7 -16"
+    , "0 7 0"
+    , "0 7 16"
+    , "0 7 32"
+    , "0 7 48"]
 
   return <>
     {
@@ -57,10 +68,9 @@ export default function Gallery() {
           id="wallTexture"
           src="/assets/output.jpg" />
       </a-assets>
-      <a-camera position={`22 ${cameraY} 16`} rotation="0 -90 0">
-        {/* <a-cursor raycaster="objects: .clickable"></a-cursor> */}
-      </a-camera>
+      <a-camera position={`22 ${cameraY} 16`} rotation="0 -90 0"></a-camera>
       <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
+      <a-entity environment="preset: tron; fog: 0.9; dressingAmount: 50; seed: 300; playArea: 5"></a-entity>
 
       <a-box material="opacity: 0.5" rotation="0 90 0" position="23 7 16" width="80" height="14" depth="0.1"></a-box>
       <a-box material="opacity: 0.5" rotation="0 90 0" position="15 7.5 37" width="38" height="1" depth="0.1"></a-box>
@@ -84,17 +94,20 @@ export default function Gallery() {
       <a-box position="18 0 32" width="0.5" height="" depth="3"></a-box>
       <a-box position="18 0 48" width="0.5" height="" depth="3"></a-box>
       <a-box position="18 0 -16" width="0.5" height="" depth="3"></a-box>
-      <Room position="0 0 -16" nfts={rooms[2]} />{/* Beanz */}
-      <Room position="0 0 0" nfts={rooms[12]} /> {/* Bored Ape Kennel Club */}
-      <Room position="0 0 16" nfts={rooms[11]} />{/* Nakamigos */}
-      <Room position="0 0 32" nfts={rooms[5]} />{/* Otherdeed */}
-      <Room position="0 0 48" nfts={rooms[6]} />{/* Clone-X */}
-      <Room position="0 7 -16" nfts={rooms[7]} />{/* Azuki */}
-      <Room position="0 7 0" nfts={rooms[8]} />{/* MAYC */}
-      <Room position="0 7 16" nfts={rooms[9]} />{/* BAYC */}
-      <Room position="0 7 32" nfts={rooms[10]} />{/* DeGods */}
-      <Room position="0 7 48" nfts={rooms[13]} />{/* Pudgy Penguins */}
-      <a-entity environment="preset: tron; fog: 0.9; dressingAmount: 50; seed: 300; playArea: 5"></a-entity>
+
+      {/* {rooms.forEach((room, i) => <Room position={positions[i]} nfts={room} />)} */}
+
+      <Room position="0 0 -16" nfts={rooms[2]} />
+      <Room position="0 0 0" nfts={rooms[12]} /> 
+      <Room position="0 0 16" nfts={rooms[11]} />
+      <Room position="0 0 32" nfts={rooms[5]} />
+      <Room position="0 0 48" nfts={rooms[6]} />
+      <Room position="0 7 -16" nfts={rooms[7]} />
+      <Room position="0 7 0" nfts={rooms[8]} />
+      <Room position="0 7 16" nfts={rooms[9]} />
+      <Room position="0 7 32" nfts={rooms[10]} />
+      <Room position="0 7 48" nfts={rooms[13]} />
+
     </a-scene>
 
   </>

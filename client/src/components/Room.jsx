@@ -38,7 +38,7 @@ export default function Room({ position, nfts }) {
           <a-plane id="directionaltarget" position="4 0 0.1" src={nfts?.RoomNFTs[2].NFT.imageUrl} rotation="0 0 0" width="2.4" height="3" animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
             animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"></a-plane>
           <a-light type="directional" color="purple" position="0 0.5 1" intensity="0.4">
-            
+
           </a-light>
           <a-light type="directional" color="red" position="3 0.5 1" intensity="0.04"></a-light>
           <a-light type="directional" color="blue" position="-3 0.5 1" intensity="0.4"></a-light>
