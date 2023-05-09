@@ -1,6 +1,7 @@
+import { redirect, useNavigate } from "react-router-dom";
 import { addFavorite, removeFavorite } from "../helpers/favoriteMethods";
 import { addRating, editRating } from "../helpers/ratingMethods";
-import { fetchProfile, handleQuotaReduce } from "../helpers/userMethods";
+import { fetchProfile, handleQuotaAdd, handleQuotaReduce } from "../helpers/userMethods";
 
 export function fetchUser() {
     // console.log('run fetchUser');
@@ -90,6 +91,22 @@ export function fetchUserAfterEditedRating(id, rating) {
 export function fetchUserAfterQuotaReduce() {
     return function(dispatch) {
         handleQuotaReduce()
+        .then(() => dispatch(fetchUser()))
+        .catch(error => {
+            if (error.response) {
+                console.log(error.response);
+            } else if (error.request) {
+                console.log(error.request);
+            } else {
+                console.log('Error: ', error.message);
+            }
+        })
+    }
+}
+
+export function fetchUserAfterQuotaAdd(order_id, status_code) {
+    return function(dispatch) {
+        handleQuotaAdd(order_id, status_code)
         .then(() => dispatch(fetchUser()))
         .catch(error => {
             if (error.response) {
