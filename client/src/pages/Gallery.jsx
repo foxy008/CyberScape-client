@@ -60,18 +60,6 @@ export default function Gallery() {
     { x: 20, y: 5, z: 16, rotation: "0 90 0", width: 4, height: 4, depth: 0.1 }
   ];
 
-  
-  
-  function handleElevatorClick(view) {
-    if (view === "up") {
-      setCameraY(5.2);
-    }
-
-    if (view === "down") {
-      setCameraY(1.6)
-    }
-  }
-
   useEffect(() => {
   function handleKeyDown(event) {
     if (event.code === "Space" && !localStorage.getItem("camera")) {
