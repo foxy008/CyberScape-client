@@ -13,6 +13,7 @@ export default function Gallery() {
   useEffect(() => {
     dispatch(getAllRooms())
     function handleKeyDown(event) {
+      localStorage.access_token ? dispatch(fetchUser()) : null;
       if (event.code === "Space" && !localStorage.getItem("camera")) {
         handleElevatorClick("up")
         localStorage.setItem("camera", "up")
@@ -22,7 +23,6 @@ export default function Gallery() {
         localStorage.removeItem("camera")
       }
     }
-    localStorage.access_token ? dispatch(fetchUser()) : null;
     window.addEventListener("keydown", handleKeyDown);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
@@ -72,7 +72,7 @@ export default function Gallery() {
       <a-camera position={`22 ${cameraY} 16`} rotation="45 90 0" mouseEnabled='true'>
       {/* <a-entity cursor raycaster="objects: .raycastable"></a-entity> */}
       </a-camera>
-      <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: .raycastable"></a-entity>
+      <a-entity id="mouseCursor" cursor="rayOrigin: mouse" ></a-entity>
       <a-entity environment="preset: tron; fog: 0.9; dressingAmount: 50; seed: 300; playArea: 5"></a-entity>
 
       <a-box material="opacity: 0.5" rotation="0 90 0" position="23 7 16" width="80" height="14" depth="0.1"></a-box>
