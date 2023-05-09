@@ -9,6 +9,7 @@ export default function Gallery() {
   const dispatch = useDispatch();
   const rooms = useSelector(state => state.rooms);
   const profile = useSelector(state => state.user);
+  console.log(rooms[1]);
 
   useEffect(() => {
     dispatch(getAllRooms())
@@ -62,13 +63,16 @@ export default function Gallery() {
       !profile ? null : console.log(profile, '<-- profile')
       // Buat cek apakah profile dapet di fetch, uncomment kalo ngak mau keliatan di console
     }
-    <a-scene stats debug>
+    <div style={{width: 'fit', height: '480px', margin: '50px'}}>
+    <a-scene stats debug embedded>
       <a-assets>
         <img
           id="wallTexture"
           src="/assets/output.jpg" />
       </a-assets>
-      <a-camera position={`22 ${cameraY} 16`} rotation="0 -90 0"></a-camera>
+      <a-camera position={`22 ${cameraY} 16`} rotation="0 -90 0">
+      {/* <a-entity cursor raycaster="objects: .raycastable"></a-entity> */}
+      </a-camera>
       <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
       <a-entity environment="preset: tron; fog: 0.9; dressingAmount: 50; seed: 300; playArea: 5"></a-entity>
 
@@ -90,25 +94,26 @@ export default function Gallery() {
       <a-box src="#wallTexture" rotation="90 0 90" position="18 14 16" width="84" height="14" depth="0.1"></a-box>
       <a-box src="#wallTexture" rotation="90 0 90" position="13 7 16" width="80" height="4" depth="0.1"></a-box>
       <a-box src="#wallTexture" rotation="90 0 90" position="17.5 7 16" width="4" height="5" depth="0.1"></a-box>
+
       <a-box color="black" position="18 0 0" width="0.5" height="" depth="3"></a-box>
       <a-box position="18 0 32" width="0.5" height="" depth="3"></a-box>
       <a-box position="18 0 48" width="0.5" height="" depth="3"></a-box>
       <a-box position="18 0 -16" width="0.5" height="" depth="3"></a-box>
-
-      {/* {rooms.forEach((room, i) => <Room position={positions[i]} nfts={room} />)} */}
-
-      <Room position="0 0 -16" nfts={rooms[2]} />
-      <Room position="0 0 0" nfts={rooms[12]} /> 
-      <Room position="0 0 16" nfts={rooms[11]} />
-      <Room position="0 0 32" nfts={rooms[5]} />
-      <Room position="0 0 48" nfts={rooms[6]} />
-      <Room position="0 7 -16" nfts={rooms[7]} />
-      <Room position="0 7 0" nfts={rooms[8]} />
-      <Room position="0 7 16" nfts={rooms[9]} />
-      <Room position="0 7 32" nfts={rooms[10]} />
-      <Room position="0 7 48" nfts={rooms[13]} />
+    
+      <Room position="0 0 -16" nfts={rooms[2]} />{/* Beanz */}
+      <Room position="0 0 0" nfts={rooms[3]} /> {/* Bored Ape Kennel Club */}
+      <Room position="0 0 16" nfts={rooms[4]} />{/* Nakamigos */}
+      <Room position="0 0 32" nfts={rooms[5]} />{/* Otherdeed */}
+      <Room position="0 0 48" nfts={rooms[6]} />{/* Clone-X */}
+      <Room position="0 7 -16" nfts={rooms[7]} />{/* Azuki */}
+      <Room position="0 7 0" nfts={rooms[8]} />{/* MAYC */}
+      <Room position="0 7 16" nfts={rooms[9]} />{/* BAYC */}
+      <Room position="0 7 32" nfts={rooms[10]} />{/* DeGods */}
+      <Room position="0 7 48" nfts={rooms[11]} />{/* Pudgy Penguins */}
 
     </a-scene>
+
+    </div>
 
   </>
 
