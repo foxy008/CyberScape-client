@@ -114,8 +114,9 @@ export default function News() {
                             </p>
                           </div>
                           <button
-                            href=""
+                            onClick={ () => window.open(article.url, '_blank')}
                             className="linear rounded-[10px] w-[120px] mx-auto bg-indigo-950 px-3 py-1 text-base font-medium text-white transition duration-200 hover:bg-brand-800 active:bg-brand-700"
+                            target='_blank'
                           >
                             Read More
                           </button>
@@ -124,6 +125,7 @@ export default function News() {
                     </div>
                   </div>
                 </div>
+                
               ))}
           </div>
         </div>
