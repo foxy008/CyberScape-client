@@ -46,7 +46,7 @@ export default function Navbar() {
         <div className={styles.container}>
           <div className={styles.navbarLeft}>
             <div className=''>
-              <img src='/assets/cyberscape-logo.png'/>
+              <img src='/assets/cyberscape-logo.png' style={{width: '250px'}}/>
             </div>
           </div>
           <div className={styles.navbarRight}>
