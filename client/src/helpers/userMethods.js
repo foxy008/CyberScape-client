@@ -30,3 +30,11 @@ export async function handleQuotaReduce() {
         }
     })
 }
+
+export async function handleQuotaAdd(order_id, status_code) {
+    return await axios.patch(`${import.meta.env.VITE_SERVER_URL}/users/add?order_id=${order_id}&status_code=${status_code}`,{ }, {
+        headers: {
+            access_token: localStorage.access_token
+        }
+    })
+}
