@@ -6,6 +6,7 @@ import Profile from '../pages/Profile'
 import AboutUs from '../pages/AboutUs'
 import Gallery from '../pages/Gallery'
 import TopGallery from '../pages/TopGallery'
+import News from '../components/News'
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
           const accessToken = localStorage.getItem('access_token')
 
           if (!accessToken) {
-              return redirect('/')
+            return redirect('/')
           }
 
           return null;
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
         path: '/about',
         element: <AboutUs />
       },
+      {
+        path: '/news',
+        element: <News />
+      },
 
     ]
   },
@@ -45,7 +50,7 @@ const router = createBrowserRouter([
       const accessToken = localStorage.getItem('access_token')
 
       if (!accessToken) {
-          return redirect('/')
+        return redirect('/')
       }
 
       return null;

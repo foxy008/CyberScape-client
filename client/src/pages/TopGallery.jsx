@@ -28,16 +28,16 @@ export default function TopGallery({ }) {
                     <a-light type="ambient" color="white" position="0 0 0" intensity="0.3"></a-light>
                     <a-box color="green" position='0 0 -2'
                         event-set__click="_event: click; _target: #nft2; position: 0 2; position: 0 1.5 -2"></a-box>
-                        
+
                     <a-gltf-model src='#my-model' position='0 0.2 0' scale="1 1 1">
                         <a-plane
-                        show-detail='test: click'
-                        id="nft1" position="0 1.5 -4.9" src={`http://localhost:8080/https://nft-preview-media.s3.us-east-1.amazonaws.com/evm/0x1/0xbd3531da5cf5857e7cfaa92426877b022e612cf8/0x4556b73bd51256c0fba5445cb4afcbf19dbbe89006e005500b2a4805fb822652/medium.png`} width="1.5" height="2"
-                        
-                        event-set__click="_event: click; _target: #nft_info; visible: true"
+                            show-detail='test: click' visible='truea'
+                            id="nft1" position="0 1.5 -4.9" src={`http://localhost:8080/https://nft-preview-media.s3.us-east-1.amazonaws.com/evm/0x1/0xbd3531da5cf5857e7cfaa92426877b022e612cf8/0x4556b73bd51256c0fba5445cb4afcbf19dbbe89006e005500b2a4805fb822652/medium.png`} width="1.5" height="2"
+
+                            event-set__click="_event: click; _target: #nft_info; visible: true"
                             animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
                             animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave">
-                            <a-box id="nft_info" position='1 0 -0.1'  width='1.5' height='2' depth='0.1' set__click="property: visible; to: false;">
+                            <a-box id="nft_info" position='1 0 -0.1' width='1.5' height='2' depth='0.1' set__click="property: visible; to: false;">
                                 <a-text
                                     value='DeGod #5294'
                                     color="black"
@@ -53,6 +53,12 @@ export default function TopGallery({ }) {
 
                             </a-box>
                             <a-box position='0 0 -0.03' color='black' width='1.55' height='2.05' depth='0.05'>
+                            <a-text
+                                    value='DeGod #5294'
+                                    color="white"
+                                    position="0 0.7 0.02"
+                                    scale="0.5 0.5 0.5"
+                                ></a-text>
                             </a-box>
                         </a-plane>
                         <a-plane position="3 1.5 -4.9" src={`http://localhost:8080/https://nft-preview-media.s3.us-east-1.amazonaws.com/evm/0x1/0xed5af388653567af2f388e6224dc7c4b3241c544/0xbd5ff52855373e29084893644a108850c0f6a4b7a43258f67b7d24add3a29ef0/medium.png`} width="1.5" height="2" animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"

@@ -4,27 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 
 export default function Room({ position, nfts }) {
+  console.log(nfts);
 
   const dispatch = useDispatch();
   const rooms = useSelector(state => state.rooms);
   const profile = useSelector(state => state.user);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedNFT, setSelectedNFT] = useState(null);
 
-  const handleNFTClick = (nft) => {
-    setSelectedNFT(nft);
-    setModalOpen(true);
-    return (
-      <>
-        
-      </>
-    )
-  };
-
-  const handleCloseModal = () => {
-    setSelectedNFT(null);
-    setModalOpen(false);
-  };
 
   return (
     <>
@@ -47,8 +32,7 @@ export default function Room({ position, nfts }) {
         </a-box>
         <a-box src="" position="0 2.5 -7.5" width="13" height="4" depth="0.1">
           <a-plane position="0 0 0.1" src={`http://localhost:8080/${nfts?.RoomNFTs[0].NFT.imageUrl}`} width="2.4" height="3" animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
-            animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave" className="modal-toggle" id="my-modal-4"
-            raycaster="objects: .clickable" class="clickable"
+            animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"
           ><a-text
             onMouseEnter={() => {
               this.el.setAttribute("visible", true);
