@@ -7,6 +7,7 @@ export default function CollectionCard(props) {
             <div className={styles.description}>
                 <h1>{props.title}</h1>
                 <p>{props.description}</p>
+                <button>Delete</button>
             </div>
         </div>
     )

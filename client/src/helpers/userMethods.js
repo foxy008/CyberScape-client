@@ -7,7 +7,7 @@ export async function fetchProfile() {
         headers: {
             access_token: localStorage.access_token
         }
-    });
+    }); 
 
     console.log(response);
     return response.data;
