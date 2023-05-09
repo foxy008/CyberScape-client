@@ -5,13 +5,7 @@ import Layout from '../components/Layout'
 import Profile from '../pages/Profile'
 import AboutUs from '../pages/AboutUs'
 import Gallery from '../pages/Gallery'
-import Login from '../pages/Login'
-import Register from '../pages/Register'
-// import { useDispatch, useSelector } from 'react-redux'
 import TopGallery from '../pages/TopGallery'
-
-// const dispatch = useDispatch();
-// const profile = useSelector(state => state.user);
 
 const router = createBrowserRouter([
   {

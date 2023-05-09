@@ -1,8 +1,19 @@
 import styles from "./collectionlist.module.css";
 import CollectionCard from "../CollectionCard";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { fetchUserAfterQuotaReduce } from "../../actions/usersCreators";
+import { useDispatch } from "react-redux";
 
 export default function CollectionList() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  function handleTop() {
+    dispatch(fetchUserAfterQuotaReduce())
+    .then(() => navigate('/top'))
+    .catch(error => console.log(error));
+  }
+
   return (
     <div className={styles.collectionList}>
       <div className={styles.container}>
@@ -32,11 +43,11 @@ export default function CollectionList() {
           />
         </div>
         <div className={styles.button}>
-            <Link to="/top">
-              <button className={styles.btn}>
+            {/* <Link to="/top"> */}
+              <button className={styles.btn} onClick={handleTop}>
                   Enter Top Gallery
               </button>
-            </Link>
+            {/* </Link> */}
         </div>
       </div>
     </div>

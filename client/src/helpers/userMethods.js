@@ -22,3 +22,11 @@ export async function handleLogin(body) {
 export async function handleRegister(body) {
     return await axios.post(`${import.meta.env.VITE_SERVER_URL}/users/register`, body)
 }
+
+export async function handleQuotaReduce() {
+    return await axios.patch(`${import.meta.env.VITE_SERVER_URL}/users/reduce`,{ }, {
+        headers: {
+            access_token: localStorage.access_token
+        }
+    })
+}

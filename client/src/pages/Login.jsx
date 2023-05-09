@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { fetchUser } from "../actions/usersCreators";
 import { handleLogin, handleRegister } from "../helpers/userMethods";
 
@@ -79,6 +78,7 @@ export default function Login() {
         <input type="checkbox" id="login-modal" className="modal-toggle" />
         <div className="modal">
             <div className="modal-box">
+                <label htmlFor="login-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                 <h3 className="font-bold text-lg">Login to get full access to our NFT world!</h3>
                 <form
                     action=""
@@ -124,6 +124,7 @@ export default function Login() {
     <input type="checkbox" id="login-modal" className="modal-toggle" />
     <div className="modal">
         <div className="modal-box">
+            <label htmlFor="login-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
             <h3 className="font-bold text-lg">Register to get full access to our NFT world!</h3>
             <form
                 action=""
@@ -176,9 +177,10 @@ export default function Login() {
                 </a>
             <div className="modal-action">
                 <button
-                    type="submit"
-                    className="btn">
-                        register
+                    type="submit">
+                        <label className="btn">
+                            register
+                        </label>
                 </button>
             </div>
             </form>

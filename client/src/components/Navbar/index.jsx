@@ -3,6 +3,7 @@ import styles from './navbar.module.css'
 import { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Login from '../../pages/Login';
+import axios from 'axios'
 
 export default function Navbar() {
   const profile = useSelector(state => state.user);
@@ -15,6 +16,21 @@ export default function Navbar() {
       type: 'user/fetch',
       payload: {}
     })
+  }
+
+  async function handlePayment() {
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/users/payment`, {
+        headers: {
+          access_token: localStorage.access_token
+        }
+      });
+
+      console.log(response);
+      await snap.pay(response.data.token);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   useEffect(() => {
@@ -57,7 +73,7 @@ export default function Navbar() {
               <label tabIndex={0} className="btn m-1">{ profile.firstName } {profile.lastName} </label>
                 <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
                   <li className='disabled'><p>Balance: { profile.quota }</p></li>
-                  <li><a>Top Up</a></li>
+                  <li><a onClick={handlePayment}>Top Up</a></li>
                   <li>
                     <Link to='/profile'>
                         Profile
