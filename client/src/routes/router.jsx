@@ -6,7 +6,11 @@ import Profile from '../pages/Profile'
 import AboutUs from '../pages/AboutUs'
 import Gallery from '../pages/Gallery'
 import TopGallery from '../pages/TopGallery'
-import News from '../components/News'
+import News from '../pages/News'
+
+
+// const dispatch = useDispatch();
+// const profile = useSelector(state => state.user);
 
 const router = createBrowserRouter([
   {
@@ -15,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />
+      },
+      {
+        path: '/news',
+        element: <News />
       },
       {
         path: '/gallery',

@@ -1,0 +1,77 @@
+import { Entity, Scene } from "aframe-react";
+import Room from "./Room";
+import { useRef, useState } from "react";
+
+export default function Gallery() {
+  const [cameraY, setCameraY] = useState(1.6);
+  const elevatorRef = useRef(null);
+
+  function handleElevatorClick() {
+    // setCameraY(3.0);
+    elevatorRef.current.setAttributes('position', '0 3 0')
+  }
+  return (
+    <>
+      {/* <a-scene> */}
+        <a-entity geometry="primitive: box"
+          material="color: #F44336"
+          position="0 1.5 -3"
+          onClick="moveUp"
+          id="box"
+          >   
+        </a-entity>
+        <a-assets>
+          <img
+            id="skyTexture"
+            src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" />
+          <img
+            id="groundTexture"
+            src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" />
+          <img
+            id="wallTexture"
+            src="/assets/output.jpg" />
+        </a-assets>
+        <a-camera position={`-20 ${cameraY} 20`} >
+          <a-cursor raycaster="objects: .clickable"></a-cursor>
+        </a-camera>
+        <a-sphere
+          className="clickable"
+          ref={elevatorRef}
+          position="5 2 25"
+          width="0.3"
+          height="1"
+          scale="0.1 0.1 0.1"
+          events={{ click: handleElevatorClick }}
+        ></a-sphere>
+        <a-box position="5 0 0" width="0.5" height="" depth="3"></a-box>
+        <a-box position="5 0 10" width="0.5" height="" depth="3"></a-box>
+        <a-box position="5 0 20" width="0.5" height="" depth="3"></a-box>
+        <a-box position="5 0 30" width="0.5" height="" depth="3"></a-box>
+        <a-box position="5 0 40" width="0.5" height="" depth="3"></a-box>
+        <Room position="-2 0 0" />
+        <Room position="12 0 0" />
+        <Room position="-2 0 10" />
+        <Room position="12 0 10" />
+        <Room position="-2 0 20" />
+        <Room position="12 0 20" />
+        <Room position="-2 0 30" />
+        <Room position="12 0 30" />
+        <Room position="-2 0 40" />
+        <Room position="12 0 40" />
+        <Room position="-2 5 0" />
+        <Room position="12 5 0" />
+        <Room position="-2 5 10" />
+        <Room position="12 5 10" />
+        <Room position="-2 5 20" />
+        <Room position="12 5 20" />
+        <Room position="-2 5 30" />
+        <Room position="12 5 30" />
+        <Room position="-2 5 40" />
+        <Room position="12 5 40" />
+        <a-entity environment="preset: tron; dressingAmount: 50; seed: 9; playArea: 4"></a-entity>
+      {/* </a-scene> */}
+    </>
+  
+  )
+}
+
