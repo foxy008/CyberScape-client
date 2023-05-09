@@ -1,5 +1,6 @@
 import styles from "./collectionlist.module.css";
 import CollectionCard from "../CollectionCard";
+import { Link } from "react-router-dom";
 
 export default function CollectionList() {
   return (
@@ -31,9 +32,11 @@ export default function CollectionList() {
           />
         </div>
         <div className={styles.button}>
-            <button className={styles.btn}>
-                Enter Top Gallery
-            </button>
+            <Link to="/top">
+              <button className={styles.btn}>
+                  Enter Top Gallery
+              </button>
+            </Link>
         </div>
       </div>
     </div>

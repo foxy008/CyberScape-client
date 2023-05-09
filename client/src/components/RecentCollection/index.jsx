@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./recentcollection.module.css";
 import CollectionCard from "@/components/CollectionCard";
+import { Link } from "react-router-dom";
 
 export default function RecentCollection() {
   return (
@@ -33,7 +34,9 @@ export default function RecentCollection() {
           </div>
           <div className={styles.button}>
             <button className={styles.btn}>
-                Enter Recent Gallery
+                <Link to="/gallery">
+                  Enter Recent Gallery
+                </Link>
             </button>
         </div>
         </div>
