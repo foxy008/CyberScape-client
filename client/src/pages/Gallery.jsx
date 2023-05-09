@@ -104,7 +104,5 @@ export default function Gallery() {
       <Room position="12 5 40" />
       <a-entity environment="preset: tron; dressingAmount: 50; seed: 9; playArea: 4"></a-entity>
     </a-scene>
-
   </>
-
 }
