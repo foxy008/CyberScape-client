@@ -69,12 +69,11 @@ export default function Gallery() {
             id="wallTexture"
             src="/assets/output.jpg" />
         </a-assets>
-        <a-camera position={`22 ${cameraY} 16`} rotation="45 90 0" >
-          {/* <a-entity cursor raycaster="objects: .raycastable"></a-entity> */}
-          <a-entity position="0 0 -1" geometry="primitive: sphere; radius: 0.01" material="color: #000000; shader: flat; opacity: 0.5">
-          </a-entity>
-        </a-camera>
-        <a-entity id="mouseCursor" cursor="rayOrigin: mouse" ></a-entity>
+        <a-camera position={`22 ${cameraY} 16`} rotation="0 -90 0" wasd-controls-enabled="true">
+                        <a-entity position="0 0 -1" geometry="primitive: sphere; radius: 0.01" material="color: #000000; shader: flat; opacity: 0.5">
+                        </a-entity>
+                    </a-camera>
+                    <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
         <a-entity environment="preset: tron; fog: 0.9; dressingAmount: 50; seed: 300; playArea: 5"></a-entity>
 
         <a-box material="opacity: 0.5" rotation="0 90 0" position="23 7 16" width="80" height="14" depth="0.1"></a-box>
