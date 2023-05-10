@@ -11,7 +11,7 @@ export default function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect(() => dispatch(fetchUser()));
+  useEffect(() => localStorage.access_token ? dispatch(fetchUser()) : null, []);
 
   function handleLogout() {
     localStorage.removeItem('access_token');
