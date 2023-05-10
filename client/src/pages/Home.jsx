@@ -12,6 +12,8 @@ import { getAllRooms } from "../actions/roomsCreators";
 import { redirect, useSearchParams } from "react-router-dom";
 import { getNews } from "../actions/news";
 import axios from 'axios';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 export default function Home() {
     const dispatch = useDispatch();
@@ -19,6 +21,7 @@ export default function Home() {
     const profile = useSelector(state => state.user);
     const rooms = useSelector(state => state.rooms);
     const [searchParams, setSearchParams] = useSearchParams();
+    const MySwal = withReactContent(Swal);
 
     useEffect(() => {
         const verify = searchParams.get('verify');
@@ -36,8 +39,20 @@ export default function Home() {
                     access_token: localStorage.access_token
                 }
             })
-            .then(response =>  history.pushState(null, "", location.href.split("?")[0]))
-            .catch(error => history.pushState(null, "", location.href.split("?")[0]))
+            .then(response => {
+                MySwal.fire({
+                    text: response.data.message,
+                    icon: 'error'
+                })
+                history.pushState(null, "", location.href.split("?")[0])
+            })
+            .catch(error => {
+                MySwal.fire({
+                    text: error.response.data.message,
+                    icon: 'error'
+                })
+                history.pushState(null, "", location.href.split("?")[0])
+            })
         }
 
         if (order_id && status_code) {
