@@ -42,8 +42,8 @@ export default function Home() {
             history.pushState(null, "", location.href.split("?")[0]);
         }
 
-        dispatch(getTopNFTs());
-        dispatch(getAllRooms());
+        dispatch(getTopNFTs(true));
+        dispatch(getAllRooms(true));
         // console.log(localStorage.access_token);
         localStorage.access_token ? dispatch(fetchUser()) : null;
 
