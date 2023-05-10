@@ -67,6 +67,8 @@ export default function Login() {
     }
 
     function handleFormChange() {
+        console.log(body);
+
         if (isLoginForm) {
             setIsLoginForm(false)
         } else {
