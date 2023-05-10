@@ -115,8 +115,8 @@ export default function Login() {
 
 
                 <div className="modal-action">
-                    <button type="submit">
-                        <label htmlFor="login-modal" className="btn">
+                    <button type="submit"  className="btn">
+                        <label htmlFor="login-modal">
                             login
                         </label>
                     </button>
@@ -183,10 +183,11 @@ export default function Login() {
                 </a>
             <div className="modal-action">
                 <button
-                    type="submit">
-                        <label className="btn" htmlFor="">
-                            register
-                        </label>
+                    type="submit" className="btn">
+                        register
+                        {/* <label  className="btn" >
+
+                        </label> */}
                 </button>
             </div>
             </form>
