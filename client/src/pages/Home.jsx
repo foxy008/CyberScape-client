@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import GalaxyBackground from "../components/GalaxyBackground";
 import ShareButtons from "../components/ShareButtons";
 import Banner from '../components/Banner'
-import News from '../components/News'
+import HomeNews from '../components/HomeNews'
 import CollectionList from '../components/CollectionList'
 import RecentCollection from '../components/RecentCollection'
 import { useDispatch, useSelector } from "react-redux";
@@ -66,7 +66,7 @@ export default function Home() {
             <Banner />
             <CollectionList />
             <RecentCollection />
-            <News />
+            <HomeNews />
         </GalaxyBackground>
     </>;
 }

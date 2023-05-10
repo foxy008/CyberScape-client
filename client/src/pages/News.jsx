@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ReactPaginate from "react-paginate";
 import { getNews } from "../actions/news";
+import GalaxyBackground from '../components/GalaxyBackground'
+
 
 export default function News() {
   const news = useSelector((state) => state.news);
@@ -28,8 +30,9 @@ export default function News() {
 
   return (
     <>
-      <section className="bg-purple-900">
-        <p className="text-4xl tracking-wider text-orange-600 ml-20">
+    <GalaxyBackground>
+      <section>
+        <p className="text-4xl tracking-wider text-orange-600 ml-20 mt-20">
           NFT News
         </p>
         <div className="flex justify-between ml-20 mr-20 mt-10">
@@ -142,6 +145,7 @@ export default function News() {
           />
         </div>
       </section>
+      </GalaxyBackground>
     </>
   );
 }
