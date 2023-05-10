@@ -1,3 +1,5 @@
+
+
 export default function newsReducer(state = [], action) {
     switch (action.type) {
         case 'news/fetch':
