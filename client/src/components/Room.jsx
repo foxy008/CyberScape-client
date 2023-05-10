@@ -9,10 +9,12 @@ export default function Room({ position, nfts }) {
   console.log(nfts);
 
   const dispatch = useDispatch();
-  const rooms = useSelector(state => state.rooms);
   const profile = useSelector(state => state.user);
   const [testing, setTesting] = useState(false)
+  const { UserFavorites } = profile
 
+  // UserFavorites.find(nft => nft.id === nfts[1].id ) ? 'render yang unfavorite button' :
+  // 'render favorite button'
 
   const frame_positions = [{ pos: "0 2.5 -7.5", rot: "0 0 0" }
     , { pos: "0 2.5 7.5", rot: "0 180 0" }
@@ -27,16 +29,18 @@ export default function Room({ position, nfts }) {
     dispatch(fetchUserAfterUnfavorited(id));
   }
 
-  function handleAddRating(id, rating) {
-    dispatch(fetchUserAfterAddingRating(id, rating));
-  }
+  function handleRating(id, rating) {
+    const { Ratings } = profile;
 
-  function handleEditRating(id, rating) {
-    dispatch(fetchUserAfterEditedRating(id, rating));
-  }
+    if (Ratings.find(nft => nft.id === id)) {
+      dispatch(fetchUserAfterEditedRating(id, rating));
+    } else {
+      dispatch(fetchUserAfterAddingRating(id, rating));
+    }
+}
 
 
-  return (
+  if (profile) return (
     <>
       <a-entity position={position}>
         <a-box src="#wallTexture" position="0 3.5 -8" width="22" height="7" depth="0.3"></a-box>
