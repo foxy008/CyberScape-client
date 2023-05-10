@@ -12,7 +12,8 @@
   align-items: center;
   background-color: #191c29;
   color: #fff;
-  justify-content: space-between;
+  
+  margin-top: 75px;
 }
 
 .container {
@@ -20,4 +21,7 @@
   justify-content: space-between;
   gap: 20px;
   display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column; 
 }

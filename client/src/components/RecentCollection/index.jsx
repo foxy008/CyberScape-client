@@ -14,25 +14,24 @@ export default function RecentCollection() {
   }, []);
 
   return (
-    <div className={styles.recentCollection}>
-      <div className={styles.container}>
-        <div>
-          <h1>Recent Collection</h1>
+    <div className={styles.wrapper}>
+      <div className={styles.recentCollection}>
+        <div className={styles.container}>
+          <div className={styles.button}>
+            <h1>Recent Top Artist</h1>
+            <button className={styles.btn}>
+              <Link to="/gallery">Enter Artist Gallery</Link>
+            </button>
+          </div>
         </div>
         <div className={styles.cards}>
           {rooms.map((room) => (
             <CollectionCard
-              imageUrl={room.imageUrl}
-              title={room.title}
-              description={room.description}
+              imageUrl={room.Artist.avatarUrl}
+              title={room.Artist.name}
             />
           ))}
         </div>
-      </div>
-      <div className={styles.button}>
-        <button className={styles.btn}>
-          <Link to="/gallery">Enter Recent Gallery</Link>
-        </button>
       </div>
     </div>
   );

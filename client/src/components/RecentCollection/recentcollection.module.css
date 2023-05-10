@@ -5,7 +5,13 @@
   display: flex;
   color: #fff;
   flex-direction: column;
+  background-color: #191c29;
+  border-radius: 8px;
 }
+
+.wrapper {
+  padding: 32px;
+} 
 
 .container {
   width: 100%;
@@ -18,12 +24,15 @@
   display: flex;
   gap: 16px;
   padding-top: 15px;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .button {
   display: flex;
   justify-content: right;
   padding-top: 20px;
+  justify-content: space-between;
 }
 
 .btn {
