@@ -62,8 +62,8 @@ export default function TopGallery({ }) {
                                         event-set__hide={`_event: mouseleave; _target: #nft${i}_info; visible: false`}
                                     >
                                     </a-plane>
-                                    <a-plane id={`nft${i}_info`} width="1.5" height="2" opacity='0.5s' color='black'
-                                        position="0 0 0.03" visible='false' >
+                                    <a-plane id={`nft${i}_info`} width="1.5" height="2" opacity='0.5' color='black'
+                                        position="0 0 0.5" visible='false' >
                                         <a-text
                                             value={nfts[i]?.title ? nfts[i]?.title : nfts[i].RoomNFTs[0].Room.Artist.name}
                                             color="white"

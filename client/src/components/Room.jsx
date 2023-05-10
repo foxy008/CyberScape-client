@@ -36,13 +36,95 @@ export default function Room({ position, nfts }) {
         <a-box src="#wallTexture" position="0 7 0" width="22" height="16" depth="0.1" rotation="90 0 0">
         </a-box>
         <a-box position="0 2.5 -7.5" width="13" height="4" depth="0.1">
-          <a-plane position="0 0 0.1" src={`http://localhost:8080/${nfts?.RoomNFTs[0].NFT.imageUrl}`} width="2.4" height="3" animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
+          <a-box position="0 0 0.1" rotation="0 0 0" color='black' width='2.4' height='3' depth='0.05'
+            animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
             animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave">
-          </a-plane>
-          <a-plane position="-4 0 0.1" src={`http://localhost:8080/${nfts?.RoomNFTs[1].NFT.imageUrl}`} width="2.4" height="3" animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
-            animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"></a-plane>
-          <a-plane position="4 0 0.1" src={`http://localhost:8080/${nfts?.RoomNFTs[2].NFT.imageUrl}`} width="2.4" height="3" animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
-            animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"></a-plane>
+            <a-plane position="0 0 0.04" src={`http://localhost:8080/${nfts.RoomNFTs[0].NFT.imageUrl}`}
+              event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[0].id}_info; visible: true`}
+              event-set__hide={`_event: mouseleave; _target: #nft${nfts.RoomNFTs[0].id}_info; visible: false`}
+              width="2.4" height="3"></a-plane>
+            <a-plane id={`nft${nfts.RoomNFTs[0].id}_info`} width="2.4" height="3" opacity='0.5' color='black'
+              position="0 0 0.04" visible='false' >
+              <a-text
+                value="test"
+                color="black"
+                position="-0.7 0.9 0.1"
+                scale="0.5 0.5 0.5"
+              ></a-text>
+              <a-text
+                value={nfts[0]?.title ? 'by ' + nfts[0]?.RoomNFTs[0].Room.Artist.name : null}
+                color="white"
+                position="-0.7 0.7 0.1"
+                scale="0.5 0.5 0.5"
+              ></a-text>
+              <a-text
+                value={nfts[0]?.description?.slice(0, 70)}
+                color="white"
+                position="-0.7 0.5 0.1"
+                scale="0.3 0.3 0.3"
+              ></a-text>
+            </a-plane>
+
+          </a-box>
+
+          <a-box position="-4 0 0.1" rotation="0 0 0" color='black' width='2.4' height='3' depth='0.05'
+            animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
+            animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave">
+            <a-plane position="0 0 0.04" src={`http://localhost:8080/${nfts.RoomNFTs[1].NFT.imageUrl}`} width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[1].id}_info; visible: true`}
+              event-set__hide={`_event: mouseleave; _target: #nft${nfts.RoomNFTs[1].id}_info; visible: false`}></a-plane>
+            <a-plane id={`nft${nfts.RoomNFTs[1].id}_info`} width="2.4" height="3" opacity='0.5' color='black'
+              position="0 0 0.04" visible='false' >
+              <a-text
+                value="test"
+                color="black"
+                position="-0.7 0.9 0.1"
+                scale="0.5 0.5 0.5"
+              ></a-text>
+              <a-text
+                value={nfts[0]?.title ? 'by ' + nfts[0]?.RoomNFTs[0].Room.Artist.name : null}
+                color="white"
+                position="-0.7 0.7 0.1"
+                scale="0.5 0.5 0.5"
+              ></a-text>
+              <a-text
+                value={nfts[0]?.description?.slice(0, 70)}
+                color="white"
+                position="-0.7 0.5 0.1"
+                scale="0.3 0.3 0.3"
+              ></a-text>
+            </a-plane>
+
+          </a-box>
+
+          <a-box position="4 0 0.1" rotation="0 0 0" color='black' width='2.4' height='3' depth='0.05'
+            animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
+            animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave">
+
+            <a-plane position="0 0 0.04" src={`http://localhost:8080/${nfts?.RoomNFTs[2].NFT.imageUrl}`} width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[2].id}_info; visible: true`}
+              event-set__hide={`_event: mouseleave; _target: #nft${nfts.RoomNFTs[2].id}_info; visible: false`}></a-plane>
+            <a-plane id={`nft${nfts.RoomNFTs[2].id}_info`} width="2.4" height="3" opacity='0.5' color='black'
+              position="0 0 0.04" visible='false' >
+              <a-text
+                value="test"
+                color="black"
+                position="-0.7 0.9 0.1"
+                scale="0.5 0.5 0.5"
+              ></a-text>
+              <a-text
+                value={nfts[0]?.title ? 'by ' + nfts[0]?.RoomNFTs[0].Room.Artist.name : null}
+                color="white"
+                position="-0.7 0.7 0.1"
+                scale="0.5 0.5 0.5"
+              ></a-text>
+              <a-text
+                value={nfts[0]?.description?.slice(0, 70)}
+                color="white"
+                position="-0.7 0.5 0.1"
+                scale="0.3 0.3 0.3"
+              ></a-text>
+            </a-plane>
+          </a-box>
+
           <a-light type="directional" color="purple" position="0 0.5 1" intensity="0.04">
           </a-light>
           <a-light type="directional" color="red" position="3 0.5 1" intensity="0.02"></a-light>
@@ -54,8 +136,33 @@ export default function Room({ position, nfts }) {
         </a-box>
 
         <a-box src="" position="0 2.5 7.5" width="13" height="4" depth="0.1" rotation="0 180 0">
-          <a-plane position="0 0 0.1" src={`http://localhost:8080/${nfts?.RoomNFTs[3].NFT.imageUrl}`} width="2.4" height="3" animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
-            animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"></a-plane>
+          <a-box position="0 0 0.08" rotation="0 180 0" color='black' width='2.4' height='3' depth='0.05'
+            animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
+            animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave">
+            <a-plane position="0 0 -0.04" rotation="0 180 0" src={`http://localhost:8080/${nfts?.RoomNFTs[3].NFT.imageUrl}`} width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[3].id}_info; visible: true`}
+              event-set__hide={`_event: mouseleave; _target: #nft${nfts.RoomNFTs[3].id}_info; visible: false`}></a-plane>
+            <a-plane id={`nft${nfts.RoomNFTs[3].id}_info`} width="2.4" height="3" opacity='0.5' color='black'
+              position="0 0 -0.04" rotation="0 180 0" visible='true' >
+              <a-text
+                value="test"
+                color="black"
+                position="-0.7 0.9 0.1"
+                scale="0.5 0.5 0.5"
+              ></a-text>
+              <a-text
+                value={nfts[0]?.title ? 'by ' + nfts[0]?.RoomNFTs[0].Room.Artist.name : null}
+                color="white"
+                position="-0.7 0.7 0.1"
+                scale="0.5 0.5 0.5"
+              ></a-text>
+              <a-text
+                value={nfts[0]?.description?.slice(0, 70)}
+                color="white"
+                position="-0.7 0.5 0.1"
+                scale="0.3 0.3 0.3"
+              ></a-text>
+            </a-plane>
+          </a-box>
           <a-plane position="-4 0 0.1" src={`http://localhost:8080/${nfts?.RoomNFTs[4].NFT.imageUrl}`} width="2.4" height="3" animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
             animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"></a-plane>
           <a-plane position="4 0 0.1" src={`http://localhost:8080/${nfts?.RoomNFTs[5].NFT.imageUrl}`} width="2.4" height="3" animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
