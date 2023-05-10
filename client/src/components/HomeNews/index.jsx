@@ -2,8 +2,11 @@ import React from "react";
 import styles from "./homenews.module.css";
 import NewsCard from "@/components/NewsCard";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function News() {
+  const news = useSelector((state) => state.news);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.homenews}>
@@ -17,27 +20,14 @@ export default function News() {
         </div>
         <div className={styles.cards}>
           {/* // mapping data news, slice 4 item */}
-
-          <NewsCard
-            imageUrl="https://via.placeholder.com/200x400"
-            title="NFT 1"
-            description="NFT 1 Description, this is some cool stuff"
-          />
-          <NewsCard
-            imageUrl="https://via.placeholder.com/200x400"
-            title="NFT 1"
-            description="NFT 1 Description, this is some cool stuff"
-          />
-          <NewsCard
-            imageUrl="https://via.placeholder.com/200x400"
-            title="NFT 1"
-            description="NFT 1 Description, this is some cool stuff"
-          />
-          <NewsCard
-            imageUrl="https://via.placeholder.com/200x400"
-            title="NFT 1"
-            description="NFT 1 Description, this is some cool stuff"
-          />
+          {news?.articles?.slice(0, 4).map((article, index) => (
+            <NewsCard
+              key={index}
+              imageUrl={article.urlToImage}
+              title={article.title}
+              description={article.description}
+            />
+          ))}
         </div>
       </div>
     </div>

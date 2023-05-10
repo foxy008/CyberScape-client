@@ -1,12 +1,11 @@
 .bannerWrapper {
-  padding: 32px;
+  padding: 100px;
 }
 
 .banner {
   position: relative;
   width: 100%;
-  padding: 0 32px;
-  height: 367px;
+  padding: 50px 150px;
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -24,4 +23,10 @@
   justify-content: center;
   text-align: center;
   flex-direction: column; 
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  color: #fff;
 }

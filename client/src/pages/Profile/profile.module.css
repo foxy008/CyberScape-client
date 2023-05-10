@@ -1,0 +1,21 @@
+.profile {
+  color: #fff;
+  width: 100%;
+  /* padding: 32px 150px; */
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  background-color: #191c29;
+  border-radius: 8px;
+}
+
+.wrapper {
+  padding: 100px;
+}
+
+.container {
+  width: 100%;
+  overflow-x: auto;
+  gap: 28px;
+  position: relative;
+}

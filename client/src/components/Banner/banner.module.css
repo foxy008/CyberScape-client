@@ -5,7 +5,7 @@
 }
 
 .bannerWrapper {
-  padding: 32px;
+  padding: 100px;
 }
 
 .banner {
@@ -19,7 +19,7 @@
   background-color: #191c29;
   color: #fff;
   justify-content: space-between;
-  margin-top: 75px;
+  /* margin-top: 75px; */
 }
 
 /* .banner::before {
@@ -85,6 +85,12 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  font-size: 20px;
+  font-family: 'Orbitron';
+}
+
+.bannerLeft h1 {
+  font-weight: 900;
 }
 
 .bannerRight {
