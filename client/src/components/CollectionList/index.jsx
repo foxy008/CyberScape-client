@@ -5,8 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
 export default function CollectionList() {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
   const topNFTs = useSelector((state) => state.nfts);
   const profile = useSelector((state) => state.user);
 

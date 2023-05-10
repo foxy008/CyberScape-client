@@ -2,11 +2,13 @@ import { useState } from "react"
 import { useDispatch } from "react-redux";
 import { fetchUser } from "../actions/usersCreators";
 import { handleLogin, handleRegister } from "../helpers/userMethods";
-
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 export default function Login() {
     const dispatch = useDispatch();
     const [isLoginForm, setIsLoginForm] = useState(true);
+    const MySwal = withReactContent(Swal);
 
     const [body, setBody] = useState({
         email: '',
@@ -24,11 +26,28 @@ export default function Login() {
             handleLogin(body)
             .then(response => localStorage.setItem('access_token', response.access_token))
             .then(() => dispatch(fetchUser()))
-            .catch(error => console.log(error))
+            .catch(error => {
+                // console.log();
+                MySwal.fire({
+                    text: error.response.data.message,
+                    icon: 'error',
+                    background: '#191c29',
+                    color: '#ef9afa'
+                })
+            })
         } else {
             handleRegister(body)
             .then(() => setIsLoginForm(true))
-            .catch(error => console.log(error))
+            .then(() => MySwal.fire(`Verification email has been sent to ${body.email}`))
+            .catch(error => {
+                // console.log(error);
+                MySwal.fire({
+                    text: error.response.data.message,
+                    icon: 'error',
+                    background: '#191c29',
+                    color: '#ef9afa'
+                })
+            })
         }
     }
 

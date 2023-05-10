@@ -5,11 +5,14 @@ import { Link, redirect, useNavigate } from "react-router-dom";
 import Login from '../../pages/Login';
 import axios from 'axios'
 import { fetchUser } from '../../actions/usersCreators';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content';
 
 export default function Navbar() {
   const profile = useSelector(state => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const MySwal = withReactContent(Swal);
 
   useEffect(() => {
     localStorage.access_token ? dispatch(fetchUser()) : null
@@ -38,6 +41,12 @@ export default function Navbar() {
       await snap.pay(response.data.token);
     } catch (error) {
       console.log(error);
+      MySwal.fire({
+        text: error.response.data.message,
+        icon: 'error',
+        background: '#191c29',
+        color: '#ef9afa'
+      })
     }
   }
 
