@@ -8,13 +8,13 @@ import {
 
 export default function ShareButtons({ title, url }) {
   return (
-    <>
+    <div className="flex gap-2">
       <TwitterShareButton title={title} url={url}>
-        <TwitterIcon />
+        <TwitterIcon size="40px" round={true} />
       </TwitterShareButton>
       <FacebookShareButton quote={title} url={url}>
-        <FacebookIcon />
+        <FacebookIcon size="40px" round={true}/>
       </FacebookShareButton>
-    </>
+    </div>
   );
 }

@@ -67,7 +67,6 @@ export default function Home() {
             <CollectionList />
             <RecentCollection />
             <News />
-            <ShareButtons title="Ini NFT 1" url="https://google.com/nft1" />
         </GalaxyBackground>
     </>;
 }

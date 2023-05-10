@@ -4,11 +4,13 @@
     padding: 32px 150px;
     min-height: 367px;
     display: flex;
+    flex-direction: column;
   }
   
   .container {
     width: 100%;
     gap: 28px;
+    position: relative;
   }
   
   .cards {

@@ -21,7 +21,7 @@
   justify-content: space-between;
 }
 
-.banner::before {
+/* .banner::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -70,11 +70,12 @@
   100% {
     --rotate: 360deg;
   }
-}
+} */
 
 .container {
   width: 100%;
   justify-content: space-between;
+  gap: 20px;
   display: flex;
 }
 
@@ -88,5 +89,10 @@
 .bannerRight {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 28px;
+}
+
+.bannerRight img {
+  width: 30%;
 }

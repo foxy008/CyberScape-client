@@ -4,16 +4,18 @@
   min-height: 367px;
   display: flex;
   color: #fff;
+  flex-direction: column;
 }
 
 .container {
   width: 100%;
   gap: 28px;
+  overflow: auto;
+  position: relative;
 }
 
 .cards {
   display: flex;
-  flex-wrap: wrap;
   gap: 16px;
   padding-top: 15px;
 }
