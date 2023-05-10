@@ -184,10 +184,9 @@ export default function Login() {
             <div className="modal-action">
                 <button
                     type="submit">
-                        register
-                        {/* <label className="btn" htmlFor="">
-
-                        </label> */}
+                        <label className="btn" htmlFor="">
+                            register
+                        </label>
                 </button>
             </div>
             </form>
