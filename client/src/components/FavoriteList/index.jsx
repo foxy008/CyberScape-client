@@ -1,12 +1,13 @@
 import styles from "./favoritelist.module.css";
 import CollectionCard from "../CollectionCard";
-import { Link, useNavigate } from "react-router-dom";
 import { fetchUserAfterQuotaReduce } from "../../actions/usersCreators";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ShareButtons from "@/components/ShareButtons";
 
 export default function CollectionList() {
-  const arr = [1, 1, 1, 1, 1, 1, 1, 1, 11, 1];
+  const arr = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+  const profile = useSelector(state => state.user);
+
   return (
     <>
       <div className={styles.favoriteList}>
