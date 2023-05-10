@@ -9,23 +9,22 @@ import { useEffect } from "react";
 export default function CollectionList() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const topNFTs = useSelector(state => state.nfts);
-  const profile = useSelector(state => state.user);
+  const topNFTs = useSelector((state) => state.nfts);
+  const profile = useSelector((state) => state.user);
 
   function handleTop() {
     const { quota } = profile;
 
     if (quota > 0) {
-      navigate('/top')
+      navigate("/top");
     }
 
-    dispatch(fetchUserAfterQuotaReduce())
+    dispatch(fetchUserAfterQuotaReduce());
   }
 
   useEffect(() => {
     dispatch(getTopNFTs());
-
-  }, [])
+  }, []);
 
   return (
     <div className={styles.collectionList}>
@@ -36,19 +35,19 @@ export default function CollectionList() {
         <div className={styles.cards}>
           {topNFTs.map((topNFTs) => (
             <CollectionCard
-            imageUrl={topNFTs.imageUrl}
-            title={topNFTs.title}
-            description={topNFTs.description}
-          />
+              imageUrl={topNFTs.imageUrl}
+              title={topNFTs.title}
+              description={topNFTs.description}
+            />
           ))}
         </div>
-        <div className={styles.button}>
-            {/* <Link to="/top"> */}
-              <button className={styles.btn} onClick={handleTop}>
-                  Enter Top Gallery
-              </button>
-            {/* </Link> */}
-        </div>
+      </div>
+      <div className={styles.button}>
+        {/* <Link to="/top"> */}
+        <button className={styles.btn} onClick={handleTop}>
+          Enter Top Gallery
+        </button>
+        {/* </Link> */}
       </div>
     </div>
   );

@@ -22,17 +22,17 @@ export default function RecentCollection() {
         <div className={styles.cards}>
           {rooms.map((room) => (
             <CollectionCard
-            imageUrl={room.imageUrl}
-            title={room.title}
-            description={room.description}
-          />
+              imageUrl={room.imageUrl}
+              title={room.title}
+              description={room.description}
+            />
           ))}
         </div>
-        <div className={styles.button}>
-          <button className={styles.btn}>
-            <Link to="/gallery">Enter Recent Gallery</Link>
-          </button>
-        </div>
+      </div>
+      <div className={styles.button}>
+        <button className={styles.btn}>
+          <Link to="/gallery">Enter Recent Gallery</Link>
+        </button>
       </div>
     </div>
   );

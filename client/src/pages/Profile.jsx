@@ -20,7 +20,7 @@ export default function Profile() {
     return <>
         { console.log(profile) }
         <GalaxyBackground>
-            <div className="flex ml-[150px] mt-10">
+            <div className="flex ml-[150px] mt-20">
                 <img className="h-[80px] w-[80px] rounded-full" src="https://itp.live/cloud/2021/12/14/SH2a0coo-nftmonkey_2.png" alt="" />
                 <div className="flex flex-col text-cyan-100 self-center ml-4">
                     <p className="text-2xl">
