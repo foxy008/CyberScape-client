@@ -23,7 +23,7 @@ export default function CollectionList() {
   }
 
   useEffect(() => {
-    dispatch(getTopNFTs());
+    // dispatch(getTopNFTs(true));
   }, []);
 
   return (

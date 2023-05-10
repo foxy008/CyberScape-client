@@ -1,9 +1,10 @@
 import fetchTopNFTs from '../helpers/nftsMethods'
 
-export default function getTopNFTs() {
+export default function getTopNFTs(query) {
     return function(dispatch) {
-        fetchTopNFTs()
+        fetchTopNFTs(query)
         .then(payload => {
+            console.log(payload.data);
             dispatch({
                 type: 'nfts/fetch',
                 payload: payload.data

@@ -1,12 +1,14 @@
 import axios from 'axios';
 
-export async function fetchRooms() {
-    return await axios.get(`http://localhost:3000/rooms`)
+export async function fetchRooms(query) {
+    return await axios.get(`${import.meta.env.VITE_SERVER_URL}/rooms${ query ? '?recent=true' : null }`)
 }
 
 export async function fetchRoomById(id) {
     return await axios({
         method: 'GET',
-        URL :`http://localhost:3000/rooms/${id}`
+        URL :`${import.meta.env.VITE_SERVER_URL}/rooms/${id}`
     })
 }
+
+// URL diganti sesuain dengan ENV

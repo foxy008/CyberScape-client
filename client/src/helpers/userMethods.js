@@ -1,13 +1,12 @@
 import axios from 'axios';
 
-export async function fetchProfile() {
+export async function fetchProfile(query) {
     // console.log('run fetchProfile');
-
     const response =  await axios.get(`${import.meta.env.VITE_SERVER_URL}/users`, {
         headers: {
             access_token: localStorage.access_token
         }
-    }); 
+    });
 
     console.log(response);
     return response.data;

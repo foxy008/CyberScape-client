@@ -1,8 +1,8 @@
 import { fetchRoomById, fetchRooms } from "../helpers/roomsMethods"
 
-export function getAllRooms() {
+export function getAllRooms(query) {
     return function(dispatch) {
-        fetchRooms()
+        fetchRooms(query)
         .then(payload => {
             console.log(payload, 'fetch rooms');
             return dispatch({
