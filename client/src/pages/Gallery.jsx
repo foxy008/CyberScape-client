@@ -63,18 +63,21 @@ export default function Gallery() {
       !profile ? null : console.log(profile, '<-- profile')
       // Buat cek apakah profile dapet di fetch, uncomment kalo ngak mau keliatan di console
     }
-    <div style={{ width: 'fit', height: '480px', margin: '100px' }}>
-      <a-scene stats debug loading-screen="dotsColor: red; backgroundColor: black">
+    <div style={{ fontSize: '50px', paddingTop: '100px', textAlign: 'center' }}>
+                Main Gallery
+            </div>
+    <div style={{ width: 'fit', height: '480px', marginTop: '50px', marginBottom: '50px', marginRight: '200px', marginLeft: '200px' }}>
+      <a-scene embedded loading-screen="dotsColor: red; backgroundColor: black">
         <a-assets>
           <img
             id="wallTexture"
             src="/assets/output.jpg" />
         </a-assets>
         <a-camera position={`22 ${cameraY} 16`} rotation="0 -90 0" wasd-controls-enabled="true">
-                        <a-entity position="0 0 -1" geometry="primitive: sphere; radius: 0.01" material="color: #000000; shader: flat; opacity: 0.5">
-                        </a-entity>
-                    </a-camera>
-                    <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
+          <a-entity position="0 0 -1" geometry="primitive: sphere; radius: 0.01" material="color: #000000; shader: flat; opacity: 0.5">
+          </a-entity>
+        </a-camera>
+        <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
         <a-entity environment="preset: tron; fog: 0.9; dressingAmount: 50; seed: 300; playArea: 5"></a-entity>
 
         <a-box material="opacity: 0.5" rotation="0 90 0" position="23 7 16" width="80" height="14" depth="0.1"></a-box>
