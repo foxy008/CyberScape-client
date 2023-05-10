@@ -19,6 +19,7 @@ export default function Login() {
         e.preventDefault();
 
         console.log(body);
+
         if (isLoginForm) {
             handleLogin(body)
             .then(response => localStorage.setItem('access_token', response.access_token))
@@ -67,8 +68,6 @@ export default function Login() {
     }
 
     function handleFormChange() {
-        console.log(body);
-
         if (isLoginForm) {
             setIsLoginForm(false)
         } else {
@@ -95,6 +94,9 @@ export default function Login() {
                             onChange={handleTextChange} />
                     </label>
                     <br></br>
+                    {
+
+                    }
                     <label htmlFor="password">
                         <span>Password</span>
                         <br></br>
@@ -180,7 +182,7 @@ export default function Login() {
             <div className="modal-action">
                 <button
                     type="submit">
-                        <label className="btn">
+                        <label className="btn" htmlFor="">
                             register
                         </label>
                 </button>
