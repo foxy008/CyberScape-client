@@ -13,9 +13,9 @@ export default function CollectionList() {
   const profile = useSelector((state) => state.user);
 
   function handleTop() {
-    const { quota } = profile;
+    const { quota, isVerified } = profile;
 
-    if (quota > 0) {
+    if (quota > 0 && isVerified) {
       navigate("/top");
     }
 

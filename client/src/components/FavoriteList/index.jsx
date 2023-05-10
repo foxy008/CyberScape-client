@@ -9,6 +9,12 @@ export default function CollectionList() {
   const profile = useSelector(state => state.user);
   const { UserFavorites } = profile
 
+  const dispatch = useDispatch();
+
+  function handleUnfavorite(id) {
+      dispatch(fetchUserAfterUnfavorited(id))
+  }
+
   if (UserFavorites) return (
     <>
       {/* { console.log(UserFavorites) } */}
@@ -34,6 +40,13 @@ export default function CollectionList() {
                               title={ `Check out this ${NFT.title} picture! Only in the https://cyberscape-p3.web.app` }
                               url={ NFT.imageUrl }
                             />
+                            <div className={styles.button}>
+                              <button
+                                className={styles.btn}
+                                onClick={() => handleUnfavorite(NFT.id)}>
+                                  Unfavorite
+                              </button>
+                          </div>
                           </>
                         }
                         id={ NFT.id }
