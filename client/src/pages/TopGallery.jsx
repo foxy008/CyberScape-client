@@ -35,8 +35,11 @@ export default function TopGallery({ }) {
     return (
         <>
 
-            <div style={{ width: 'fit', height: '480px', margin: '100px' }}>
-                <a-scene>
+                <div style={{fontSize: '50px'}}>
+        Top Collection
+                </div>
+            <div style={{ width: 'fit', height: '480px', margin: '150px' }}>
+                <a-scene embedded>
                     <a-assets>
                         <a-asset-item id="my-model" src='/assets/3D-assets/gallery_minimalis/scene.gltf'></a-asset-item>
                     </a-assets>

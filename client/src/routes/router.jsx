@@ -49,22 +49,22 @@ const router = createBrowserRouter([
         path: '/news',
         element: <News />
       },
+      {
+        path: '/top',
+        loader: () => {
+          const accessToken = localStorage.getItem('access_token')
 
+          if (!accessToken) {
+            return redirect('/')
+          }
+
+          return null;
+        },
+        element: <TopGallery />
+      }
     ]
   },
-  {
-    path: '/top',
-    loader: () => {
-      const accessToken = localStorage.getItem('access_token')
 
-      if (!accessToken) {
-        return redirect('/')
-      }
-
-      return null;
-    },
-    element: <TopGallery />
-  }
 ])
 
 export default router
