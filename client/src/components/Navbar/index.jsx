@@ -49,7 +49,7 @@ export default function Navbar() {
         <div className={styles.container}>
           <div className={styles.navbarLeft}>
             <div className={styles.logo}>
-              <img src='/assets/cyberscape-logo-nav.png'/>
+              <img src='/assets/cyberscape-logo.png'/>
             </div>
           </div>
           <div className={styles.navbarRight}>
