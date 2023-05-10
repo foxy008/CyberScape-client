@@ -17,7 +17,7 @@ export default function Profile() {
           <div className={styles.wrapper}>
             <div className={styles.profile}>
               <div className={styles.container}>
-                <div className="flex ml-[150px] mt-20">
+                <div className="flex ml-[70px] mt-20">
                   <img
                     className="h-[80px] w-[80px] rounded-full"
                     src="https://itp.live/cloud/2021/12/14/SH2a0coo-nftmonkey_2.png"
@@ -28,7 +28,7 @@ export default function Profile() {
                       {`${profile.firstName} ${profile.lastName}`}
                     </p>
                     <p>{profile.email}</p>
-                    <p>Quota : {profile.quota}</p>
+                    <p>Credit : {profile.quota}</p>
                   </div>
                 </div>
                 <FavoriteList />
