@@ -43,7 +43,6 @@ export default function CollectionList() {
               <CollectionCard
                 imageUrl={topNFTs.imageUrl}
                 title={topNFTs.title}
-                description={topNFTs.description}
               />
             ))}
           </div>
