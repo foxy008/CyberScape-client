@@ -10,6 +10,7 @@ import getTopNFTs from "../actions/nftsCreators";
 import { fetchUser, fetchUserAfterQuotaAdd } from "../actions/usersCreators";
 import { getAllRooms } from "../actions/roomsCreators";
 import { redirect, useSearchParams } from "react-router-dom";
+import { getNews } from "../actions/news";
 import axios from 'axios';
 
 export default function Home() {
@@ -23,6 +24,8 @@ export default function Home() {
         const verify = searchParams.get('verify');
         const status_code = searchParams.get('status_code');
         const order_id = searchParams.get('order_id')
+
+        dispatch(getNews());
 
         if (verify) {
             // console.log(verify, localStorage.access_token, '<--- verif & access token');
