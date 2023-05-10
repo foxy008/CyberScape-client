@@ -11,6 +11,7 @@ export default function Room({ position, nfts }) {
   const rooms = useSelector(state => state.rooms);
   const profile = useSelector(state => state.user);
 
+
   const frame_positions = [{ pos: "0 2.5 -7.5", rot: "0 0 0" }
     , { pos: "0 2.5 7.5", rot: "0 180 0" }
     , { pos: "5 2.5 0", rot: "0 -135 0" }
@@ -52,6 +53,11 @@ export default function Room({ position, nfts }) {
         </a-box>
         <a-box src="#wallTexture" position="0 7 0" width="22" height="16" depth="0.1" rotation="90 0 0">
         </a-box>
+
+        <a-sphere position="20 2 0" scale='0.2 0.2 0.2' onClick={console.log('test')}>
+
+        </a-sphere>
+
         <a-box position="0 2.5 -7.5" width="13" height="4" depth="0.1">
           <a-box position="0 0 0.1" rotation="0 0 0" color='black' width='2.4' height='3' depth='0.05'
             animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
