@@ -4,7 +4,7 @@ export function getAllRooms(query) {
     return function(dispatch) {
         fetchRooms(query)
         .then(payload => {
-            console.log(payload, 'fetch rooms');
+            // console.log(payload, 'fetch rooms');
             return dispatch({
             type: 'rooms/fetch',
             payload: payload.data

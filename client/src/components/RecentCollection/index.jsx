@@ -10,7 +10,7 @@ export default function RecentCollection() {
   const rooms = useSelector((state) => state.rooms);
 
   useEffect(() => {
-    dispatch(getAllRooms());
+    // dispatch(getAllRooms());
   }, []);
 
   return (
