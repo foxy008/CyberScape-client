@@ -29,7 +29,7 @@ export default function Room({ position, nfts }) {
     dispatch(fetchUserAfterAddingRating(id, rating));
   }
 
-  function handleEditRating(id, value) {
+  function handleEditRating(id, rating) {
     dispatch(fetchUserAfterEditedRating(id, rating));
   }
 
