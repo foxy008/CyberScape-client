@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 export async function addRating(id, rating) {
-    return await axios.post(`${import.meta.env.VITE_SERVER_URL}/ratings/${id}?value=${rating}`,
-    {
+    return await axios.post(`${import.meta.env.VITE_SERVER_URL}/ratings/${id}?value=${rating}`, {}, {
         headers: {
             access_token: localStorage.access_token
         }

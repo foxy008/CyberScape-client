@@ -29,6 +29,10 @@ const router = createBrowserRouter([
         element: <Gallery />
       },
       {
+        path: '/about',
+        element: <AboutUs />
+      },
+      {
         path: '/profile',
         loader: () => {
           const accessToken = localStorage.getItem('access_token')
@@ -40,14 +44,6 @@ const router = createBrowserRouter([
           return null;
         },
         element: <Profile />
-      },
-      {
-        path: '/about',
-        element: <AboutUs />
-      },
-      {
-        path: '/news',
-        element: <News />
       },
       {
         path: '/top',

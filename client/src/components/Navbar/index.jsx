@@ -1,21 +1,24 @@
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './navbar.module.css'
 import { useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, redirect, useNavigate } from "react-router-dom";
 import Login from '../../pages/Login';
 import axios from 'axios'
 
 export default function Navbar() {
   const profile = useSelector(state => state.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   function handleLogout() {
-    localStorage.removeItem('access_token')
+    localStorage.removeItem('access_token');
 
     dispatch({
       type: 'user/fetch',
       payload: {}
     })
+
+    navigate('/');
   }
 
   async function handlePayment() {
