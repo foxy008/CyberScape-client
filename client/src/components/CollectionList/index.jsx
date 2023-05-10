@@ -27,27 +27,27 @@ export default function CollectionList() {
   }, []);
 
   return (
-    <div className={styles.collectionList}>
-      <div className={styles.container}>
-        <div>
-          <h1>Top Items Collections</h1>
+    <div className={styles.wrapper}>
+      <div className={styles.collectionList}>
+        <div className={styles.container}>
+          <div className={styles.button}>
+            <h1>Top Items Collections</h1>
+            {/* <Link to="/top"> */}
+            <button className={styles.btn} onClick={handleTop}>
+              Enter Top Gallery
+            </button>
+            {/* </Link> */}
+          </div>
+          <div className={styles.cards}>
+            {topNFTs.map((topNFTs) => (
+              <CollectionCard
+                imageUrl={topNFTs.imageUrl}
+                title={topNFTs.title}
+                description={topNFTs.description}
+              />
+            ))}
+          </div>
         </div>
-        <div className={styles.cards}>
-          {topNFTs.map((topNFTs) => (
-            <CollectionCard
-              imageUrl={topNFTs.imageUrl}
-              title={topNFTs.title}
-              description={topNFTs.description}
-            />
-          ))}
-        </div>
-      </div>
-      <div className={styles.button}>
-        {/* <Link to="/top"> */}
-        <button className={styles.btn} onClick={handleTop}>
-          Enter Top Gallery
-        </button>
-        {/* </Link> */}
       </div>
     </div>
   );
