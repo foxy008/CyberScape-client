@@ -13,11 +13,11 @@ export default function CollectionList() {
   const profile = useSelector((state) => state.user);
 
   function handleTop() {
-    const { quota } = profile;
+    const { quota, isVerified } = profile;
 
-    if (quota > 0) {
-      navigate("/top");
-    }
+    // if (quota > 0 && isVerified) {
+    //   navigate("/top");
+    // }
 
     dispatch(fetchUserAfterQuotaReduce());
   }

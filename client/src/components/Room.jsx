@@ -37,7 +37,7 @@ export default function Room({ position, nfts }) {
     } else {
       dispatch(fetchUserAfterAddingRating(id, rating));
     }
-}
+  }
 
 
   if (profile) return (
@@ -93,13 +93,14 @@ export default function Room({ position, nfts }) {
                 position="-1.1 0.6 0.1"
                 scale="0.45 0.45 0.45"
               ></a-text>
+              <a-plane onClick={() => handleFavorite(nfts.RoomNFTs[0].NFT.id)} color="red" position="1 -1.3 0.02" width="0.2" height="0.2"></a-plane>
+                
 
-              <a-plane  onClick={() => handleFavorite(nfts.RoomNFTs[0].NFT.id)} color="red" position="1 -1.3 0.02" width="0.2" height="0.2"></a-plane>
-              <a-plane  onClick={() => handleAddRating(nfts.RoomNFTs[0].NFT.id, 1)} color="yellow" position="-1 -1.3 0.02" width="0.2" height="0.2"></a-plane>
-              <a-plane  onClick={() => handleAddRating(nfts.RoomNFTs[0].NFT.id, 2)} color="yellow" position="-0.7 -1.3 0.02" width="0.2" height="0.2"></a-plane>
-              <a-plane  onClick={() => handleAddRating(nfts.RoomNFTs[0].NFT.id, 3)} color="yellow" position="-0.4 -1.3 0.02" width="0.2" height="0.2"></a-plane>
-              <a-plane  onClick={() => handleAddRating(nfts.RoomNFTs[0].NFT.id, 4)} color="yellow" position="-0.1 -1.3 0.02" width="0.2" height="0.2"></a-plane>
-              <a-plane visible={testing === 'true' ? 'false' : 'true'} onClick={() => handleAddRating(nfts.RoomNFTs[0].NFT.id, 5)} color="yellow" position="0.2 -1.3 0.02" width="0.2" height="0.2">
+              <a-plane onClick={() => handleRating(nfts.RoomNFTs[0].NFT.id, 1)} color="yellow" position="-1 -1.3 0.02" width="0.2" height="0.2"></a-plane>
+              <a-plane onClick={() => handleRating(nfts.RoomNFTs[0].NFT.id, 2)} color="yellow" position="-0.7 -1.3 0.02" width="0.2" height="0.2"></a-plane>
+              <a-plane onClick={() => handleRating(nfts.RoomNFTs[0].NFT.id, 3)} color="yellow" position="-0.4 -1.3 0.02" width="0.2" height="0.2"></a-plane>
+              <a-plane onClick={() => handleRating(nfts.RoomNFTs[0].NFT.id, 4)} color="yellow" position="-0.1 -1.3 0.02" width="0.2" height="0.2"></a-plane>
+              <a-plane visible={testing === 'true' ? 'false' : 'true'} onClick={() => handleRating(nfts.RoomNFTs[0].NFT.id, 5)} color="yellow" position="0.2 -1.3 0.02" width="0.2" height="0.2">
 
               </a-plane>
             </a-plane>

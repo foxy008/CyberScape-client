@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export async function fetchProfile(query) {
+export async function fetchProfile() {
     // console.log('run fetchProfile');
     const response =  await axios.get(`${import.meta.env.VITE_SERVER_URL}/users`, {
         headers: {

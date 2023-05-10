@@ -7,10 +7,7 @@ import AboutUs from '../pages/AboutUs'
 import Gallery from '../pages/Gallery'
 import TopGallery from '../pages/TopGallery'
 import News from '../pages/News'
-
-
-// const dispatch = useDispatch();
-// const profile = useSelector(state => state.user);
+import { fetchProfile } from '../helpers/userMethods'
 
 const router = createBrowserRouter([
   {
@@ -53,6 +50,22 @@ const router = createBrowserRouter([
           if (!accessToken) {
             return redirect('/')
           }
+
+          fetchProfile()
+          .then(response => {
+            const { isVerified, quota } = response;
+
+            console.log({ isVerified, quota }, 'on loader');
+
+            if (quota < 1) {
+              return redirect('/')
+            }
+
+            if (!isVerified) {
+              return redirect('/')
+            }
+
+          })
 
           return null;
         },

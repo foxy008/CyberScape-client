@@ -18,7 +18,7 @@ export default function RecentCollection() {
       <div className={styles.recentCollection}>
         <div className={styles.container}>
           <div className={styles.button}>
-            <h1>Recent Top Artist</h1>
+            <h1>Recent Artist Collections</h1>
             <button className={styles.btn}>
               <Link to="/gallery">Enter Artist Gallery</Link>
             </button>

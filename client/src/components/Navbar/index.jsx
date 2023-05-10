@@ -4,11 +4,14 @@ import { useEffect } from 'react';
 import { Link, redirect, useNavigate } from "react-router-dom";
 import Login from '../../pages/Login';
 import axios from 'axios'
+import { fetchUser } from '../../actions/usersCreators';
 
 export default function Navbar() {
   const profile = useSelector(state => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => localStorage.access_token ? dispatch(fetchUser()) : null, []);
 
   function handleLogout() {
     localStorage.removeItem('access_token');
