@@ -12,6 +12,7 @@ export default function Gallery() {
 
   useEffect(() => {
     dispatch(getAllRooms())
+
     function handleKeyDown(event) {
       localStorage.access_token ? dispatch(fetchUser()) : null;
       if (event.code === "Space" && !localStorage.getItem("camera")) {
@@ -104,7 +105,7 @@ export default function Gallery() {
 
         {rooms.map((el, i) => {
           if (i < 10) {
-            return <Room position={positions[i]} nfts={rooms[i + 2]} ></Room>
+            return <Room position={positions[i]} nfts={rooms[i]} ></Room>
           }
         })}
 

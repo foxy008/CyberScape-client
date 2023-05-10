@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchUserAfterAddingRating, fetchUserAfterEditedRating, fetchUserAfterFavorited, fetchUserAfterUnfavorited } from "../actions/usersCreators";
 
 
 export default function Room({ position, nfts }) {
@@ -14,6 +15,22 @@ export default function Room({ position, nfts }) {
     , { pos: "0 2.5 7.5", rot: "0 180 0" }
     , { pos: "5 2.5 0", rot: "0 -135 0" }
     , { pos: "-5 2.5 0", rot: "0 -135 0" }]
+
+  function handleFavorite(id) {
+    dispatch(fetchUserAfterFavorited(id));
+  }
+
+  function handleUnfavorite(id) {
+    dispatch(fetchUserAfterUnfavorited(id));
+  }
+
+  function handleAddRating(id, rating) {
+    dispatch(fetchUserAfterAddingRating(id, rating));
+  }
+
+  function handleEditRating(id, value) {
+    dispatch(fetchUserAfterEditedRating(id, rating));
+  }
 
 
   return (
