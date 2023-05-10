@@ -45,6 +45,16 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
+        <div className={styles.bannerWrapper}>
+          <h1>Price</h1>
+          <div className={styles.banner}>
+            <div className={styles.container}>
+              <div>
+                Rp. 100.000 / Credit
+              </div>
+            </div>
+          </div>
+        </div>
       </GalaxyBackground>
     </>
   );
