@@ -68,6 +68,8 @@ export default function Login() {
     }
 
     function handleFormChange() {
+        console.log(body);
+
         if (isLoginForm) {
             setIsLoginForm(false)
         } else {
@@ -182,9 +184,10 @@ export default function Login() {
             <div className="modal-action">
                 <button
                     type="submit">
-                        <label className="btn" htmlFor="">
-                            register
-                        </label>
+                        register
+                        {/* <label className="btn" htmlFor="">
+
+                        </label> */}
                 </button>
             </div>
             </form>
