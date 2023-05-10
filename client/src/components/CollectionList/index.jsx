@@ -15,9 +15,9 @@ export default function CollectionList() {
   function handleTop() {
     const { quota, isVerified } = profile;
 
-    if (quota > 0 && isVerified) {
-      navigate("/top");
-    }
+    // if (quota > 0 && isVerified) {
+    //   navigate("/top");
+    // }
 
     dispatch(fetchUserAfterQuotaReduce());
   }
