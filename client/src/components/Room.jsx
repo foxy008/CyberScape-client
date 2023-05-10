@@ -13,7 +13,7 @@ export default function Room({ position, nfts }) {
   const [testing, setTesting] = useState(false)
   const { UserFavorites } = profile
 
-  // UserFavorites.find(nft => nft.id === nfts[1].id ) ? 'render yang unfavorite button' :
+  // UserFavorites.find(nft => nft.id === nfts[1].id ) ? 'render unfavorite button' :
   // 'render favorite button'
 
   const frame_positions = [{ pos: "0 2.5 -7.5", rot: "0 0 0" }
