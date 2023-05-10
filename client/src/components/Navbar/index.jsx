@@ -11,7 +11,9 @@ export default function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect(() => localStorage.access_token ? dispatch(fetchUser()) : null, []);
+  useEffect(() => {
+    localStorage.access_token ? dispatch(fetchUser()) : null
+  }, []);
 
   function handleLogout() {
     localStorage.removeItem('access_token');
@@ -38,9 +40,6 @@ export default function Navbar() {
       console.log(error);
     }
   }
-
-  useEffect(() => {
-  }, [profile])
 
   return (
     <>

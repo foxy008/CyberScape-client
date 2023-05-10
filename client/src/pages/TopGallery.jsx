@@ -3,13 +3,16 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import getTopNFTs from "../actions/nftsCreators";
+import { fetchUserAfterQuotaReduce } from "../actions/usersCreators";
 
 export default function TopGallery({ }) {
 
     const dispatch = useDispatch();
     const nfts = useSelector(state => state.nfts);
+
     useEffect(() => {
         dispatch(getTopNFTs())
+        dispatch(fetchUserAfterQuotaReduce())
     }, [])
     console.log(nfts);
     const top_positions = ["0 1.5 -4.9"

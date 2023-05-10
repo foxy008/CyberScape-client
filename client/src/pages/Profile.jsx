@@ -7,15 +7,6 @@ import FavoriteList from '../components/FavoriteList'
 
 export default function Profile() {
     const profile = useSelector(state => state.user);
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        if (!localStorage.access_token) {
-            redirect('/login');
-        } else {
-            dispatch(fetchUser())
-        }
-    }, []);
 
     if (profile) return <>
         { console.log(profile) }

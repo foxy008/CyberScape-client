@@ -51,11 +51,10 @@ const router = createBrowserRouter([
             return redirect('/')
           }
 
-          fetchProfile()
+          return fetchProfile()
           .then(response => {
             const { isVerified, quota } = response;
-
-            console.log({ isVerified, quota }, 'on loader');
+            console.log({ isVerified, quota });
 
             if (quota < 1) {
               return redirect('/')
@@ -65,9 +64,8 @@ const router = createBrowserRouter([
               return redirect('/')
             }
 
+            return null;
           })
-
-          return null;
         },
         element: <TopGallery />
       }

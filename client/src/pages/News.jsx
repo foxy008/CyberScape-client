@@ -10,7 +10,7 @@ export default function News() {
   const dispatch = useDispatch();
 
   async function catchNews() {
-    await dispatch(getNews());
+    dispatch(getNews());
   }
 
   useEffect(() => {
@@ -128,7 +128,7 @@ export default function News() {
                     </div>
                   </div>
                 </div>
-                
+
               ))}
           </div>
         </div>
