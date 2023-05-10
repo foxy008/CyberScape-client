@@ -63,7 +63,7 @@ export default function TopGallery({ }) {
                                     >
                                     </a-plane>
                                     <a-plane id={`nft${i}_info`} width="1.5" height="2" opacity='0.5' color='black'
-                                        position="0 0 0.5" visible='false' >
+                                        position="0 0 0.03" visible='false' >
                                         <a-text
                                             value={nfts[i]?.title ? nfts[i]?.title : nfts[i].RoomNFTs[0].Room.Artist.name}
                                             color="white"
