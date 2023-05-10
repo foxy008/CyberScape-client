@@ -53,6 +53,10 @@
   cursor: pointer;
 }
 
+.button h1 {
+  font-family: 'Orbitron';
+}
+
 .btn:hover {
   background-color: #711396;
   box-shadow: 0px 15px 20px rgba(81, 55, 93, 0.73);

@@ -15,6 +15,23 @@ export default function CollectionList() {
     dispatch(fetchUserAfterUnfavorited(id));
   }
 
+  console.log(UserFavorites);
+
+  if (UserFavorites && UserFavorites.length === 0) {
+    return (
+      <div className={styles.favoriteList}>
+        <div className={styles.container}>
+          <div>
+            <p className="text-center">
+              No favorites... Browse our collection and add them as your
+              favorite
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (UserFavorites)
     return (
       <>

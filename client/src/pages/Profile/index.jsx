@@ -8,40 +8,34 @@ import FavoriteList from "../../components/FavoriteList";
 
 export default function Profile() {
   const profile = useSelector((state) => state.user);
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (!localStorage.access_token) {
-      redirect("/login");
-    } else {
-      dispatch(fetchUser());
-    }
-  }, []);
-
-  return (
-    <>
-      {console.log(profile)}
-      <GalaxyBackground>
-        <div className={styles.wrapper}>
-          <div className={styles.profile}>
-            <div className={styles.container}>
-              <div className="flex ml-[70px] mt-20">
-                <img
-                  className="h-[80px] w-[80px] rounded-full"
-                  src="https://itp.live/cloud/2021/12/14/SH2a0coo-nftmonkey_2.png"
-                  alt=""
-                />
-                <div className="flex flex-col text-cyan-100 self-center ml-4">
-                  <p className="text-2xl">John Doe</p>
-                  <p>rehan@kurangbaiq.com</p>
-                  <p>Quota : 99</p>
+  if (profile)
+    return (
+      <>
+        {console.log(profile)}
+        <GalaxyBackground>
+          <div className={styles.wrapper}>
+            <div className={styles.profile}>
+              <div className={styles.container}>
+                <div className="flex ml-[150px] mt-20">
+                  <img
+                    className="h-[80px] w-[80px] rounded-full"
+                    src="https://itp.live/cloud/2021/12/14/SH2a0coo-nftmonkey_2.png"
+                    alt=""
+                  />
+                  <div className="flex flex-col text-cyan-100 self-center ml-4">
+                    <p className="text-2xl">
+                      {`${profile.firstName} ${profile.lastName}`}
+                    </p>
+                    <p>{profile.email}</p>
+                    <p>Quota : {profile.quota}</p>
+                  </div>
                 </div>
-              </div>
                 <FavoriteList />
+              </div>
             </div>
           </div>
-        </div>
-      </GalaxyBackground>
-    </>
-  );
+        </GalaxyBackground>
+      </>
+    );
 }
