@@ -29,23 +29,30 @@ export default function Login() {
             .catch(error => {
                 // console.log();
                 MySwal.fire({
-                    text: error.response.data.message,
+                    title: error.response.data.message,
                     icon: 'error',
                     background: '#191c29',
-                    color: '#ef9afa'
+                    color: '#ef9afa',
+                    confirmButtonColor: 'rgb(239 68 68)'
                 })
             })
         } else {
             handleRegister(body)
             .then(() => setIsLoginForm(true))
-            .then(() => MySwal.fire(`Verification email has been sent to ${body.email}`))
+            .then(() => MySwal.fire({
+                title: `Verification email has been sent to ${body.email}`,
+                background: '#191c29',
+                color: '#ef9afa',
+                confirmButtonColor: 'rgb(132 204 22)'
+            }))
             .catch(error => {
                 // console.log(error);
                 MySwal.fire({
-                    text: error.response.data.message,
+                    title: error.response.data.message,
                     icon: 'error',
                     background: '#191c29',
-                    color: '#ef9afa'
+                    color: '#ef9afa',
+                    confirmButtonColor: 'rgb(239 68 68)'
                 })
             })
         }
@@ -145,7 +152,6 @@ export default function Login() {
                          Register Here!
                         </a>
                     </p>
-
 
 
                 <div className="modal-action">
