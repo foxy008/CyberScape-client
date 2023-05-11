@@ -8,6 +8,7 @@ export default function News() {
   const news = useSelector((state) => state.news);
 
   return (
+    <>
     <div className={styles.wrapper}>
       <div className={styles.homenews}>
         <div className={styles.container}>
@@ -30,6 +31,7 @@ export default function News() {
           ))}
         </div>
       </div>
-    </div>
+      </div>
+      </>
   );
 }
