@@ -35,6 +35,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: left;
+    padding-top: 20px;
 }
 
 .card p {

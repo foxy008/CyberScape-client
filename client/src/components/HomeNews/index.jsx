@@ -26,7 +26,7 @@ export default function News() {
               key={index}
               imageUrl={article.urlToImage}
               title={article.title}
-              description={article.description}
+              // description={article.description}//
             />
           ))}
         </div>
