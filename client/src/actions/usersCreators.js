@@ -108,6 +108,15 @@ export function fetchUserAfterQuotaReduce() {
 export function fetchUserAfterQuotaAdd(order_id, status_code) {
     return function(dispatch) {
         handleQuotaAdd(order_id, status_code)
+        .then(() => {
+            Swal.fire({
+                title: 'Transaction successful! You have gotten another credit!',
+                icon: 'success',
+                background: '#191c29',
+                color: '#ef9afa',
+                confirmButtonColor: 'rgb(132 204 22)'
+            })
+        })
         .then(() => dispatch(fetchUser()))
         .catch(error => {
             if (error.response) {
@@ -117,6 +126,14 @@ export function fetchUserAfterQuotaAdd(order_id, status_code) {
             } else {
                 console.log('Error: ', error.message);
             }
+
+            Swal.fire({
+                title: 'Transaction failed! Please try again!',
+                icon: 'error',
+                background: '#191c29',
+                color: '#ef9afa',
+                confirmButtonColor: 'rgb(239 68 68)'
+            })
         })
     }
 }

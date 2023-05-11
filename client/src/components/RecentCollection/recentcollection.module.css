@@ -11,13 +11,13 @@
 }
 
 .wrapper {
-  padding: 100px;
+  padding: 30px 100px;
 } 
 
 .container {
   width: 100%;
   gap: 28px;
-  overflow: auto;
+  /* overflow: auto; */
   position: relative;
 }
 
@@ -27,6 +27,7 @@
   padding-top: 30px;
   justify-content: space-between;
   text-align: center;
+  overflow: auto;
 }
 
 .button {

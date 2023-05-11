@@ -83,17 +83,17 @@ export default function Navbar() {
               //   </button>
               // </Link>
               <label htmlFor="login-modal" className="btn">Log In</label>
-              : <div className="dropdown">
+              : <div className="dropdown dropdown-end  text-neutral-content w-50">
               <label tabIndex={0} className="btn m-1">{ profile.firstName } {profile.lastName} </label>
-                <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                  <li className='disabled'><p>Credit: { profile.quota }</p></li>
-                  <li><a onClick={handlePayment}>Top Up</a></li>
-                  <li>
+                <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-neutral rounded-box">
+                  <li className='text-lime-500'><p>Credit: { profile.quota }</p></li>
+                  <li><a onClick={handlePayment} className='hover:bg-neutral-focus'>Top Up</a></li>
+                  <li className='hover:bg-neutral-focus'>
                     <Link to='/profile'>
                         Profile
                     </Link>
                   </li>
-                  <li>
+                  <li className='hover:bg-neutral-focus'>
                     <a onClick={handleLogout}>Sign Out</a>
                   </li>
                 </ul>

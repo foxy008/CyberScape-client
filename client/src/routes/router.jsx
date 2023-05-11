@@ -40,7 +40,8 @@ const router = createBrowserRouter([
               title: 'You need to login first to access your profile.',
               icon: 'error',
               background: '#191c29',
-              color: '#ef9afa'
+              color: '#ef9afa',
+              confirmButtonColor: 'rgb(239 68 68)'
             })
             return redirect('/')
           }
@@ -59,7 +60,8 @@ const router = createBrowserRouter([
               title: 'You need to login first to access our top gallery.',
               icon: 'error',
               background: '#191c29',
-              color: '#ef9afa'
+              color: '#ef9afa',
+              confirmButtonColor: 'rgb(239 68 68)'
             })
             return redirect('/')
           }
@@ -74,7 +76,8 @@ const router = createBrowserRouter([
                 title: 'You need at least 1 credit to access our top gallery.',
                 icon: 'error',
                 background: '#191c29',
-                color: '#ef9afa'
+                color: '#ef9afa',
+                confirmButtonColor: 'rgb(239 68 68)'
               })
               return redirect('/')
             }
@@ -84,7 +87,8 @@ const router = createBrowserRouter([
                 title: 'You need at verify your account first to access our top gallery',
                 icon: 'error',
                 background: '#191c29',
-                color: '#ef9afa'
+                color: '#ef9afa',
+                confirmButtonColor: 'rgb(239 68 68)'
               })
               return redirect('/')
             }

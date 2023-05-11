@@ -42,14 +42,20 @@ export default function Home() {
             .then(response => {
                 MySwal.fire({
                     text: response.data.message,
-                    icon: 'error'
+                    icon: 'success',
+                    background: '#191c29',
+                    color: '#ef9afa',
+                    confirmButtonColor: 'rgb(132 204 22)'
                 })
                 history.pushState(null, "", location.href.split("?")[0])
             })
             .catch(error => {
                 MySwal.fire({
                     text: error.response.data.message,
-                    icon: 'error'
+                    icon: 'error',
+                    background: '#191c29',
+                    color: '#ef9afa',
+                    confirmButtonColor: 'rgb(239 68 68)'
                 })
                 history.pushState(null, "", location.href.split("?")[0])
             })
