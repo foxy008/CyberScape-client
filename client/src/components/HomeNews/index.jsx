@@ -15,7 +15,7 @@ export default function News() {
           <div className={styles.button}>
             <h1>NFT News</h1>
             <button className={styles.btn}>
-              <Link to="/news">See More News</Link>
+              <Link to="/news">Enter</Link>
             </button>
           </div>
         </div>
