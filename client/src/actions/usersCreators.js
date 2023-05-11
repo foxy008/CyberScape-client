@@ -2,6 +2,7 @@ import { redirect, useNavigate } from "react-router-dom";
 import { addFavorite, removeFavorite } from "../helpers/favoriteMethods";
 import { addRating, editRating } from "../helpers/ratingMethods";
 import { fetchProfile, handleQuotaAdd, handleQuotaReduce } from "../helpers/userMethods";
+import Swal from 'sweetalert2'
 
 export function fetchUser() {
     // console.log('run fetchUser');

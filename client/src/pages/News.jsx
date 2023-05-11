@@ -10,7 +10,7 @@ export default function News() {
   const dispatch = useDispatch();
 
   async function catchNews() {
-    await dispatch(getNews());
+    dispatch(getNews());
   }
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function News() {
     <>
     <GalaxyBackground>
       <section>
-        <p className="text-4xl tracking-wider text-orange-600 ml-20 mt-20">
+        <p className="text-4xl tracking-wider text-white ml-20 mt-20">
           NFT News
         </p>
         <div className="flex justify-between ml-20 mr-20 mt-10">
@@ -45,7 +45,7 @@ export default function News() {
             src={highlight.urlToImage}
             alt={highlight.title}
           />
-          <div className="flex-col h-[400px] overflow-y-scroll overflow-x-hidden w-1/3 p-6 text-orange-500 bg-blue-950">
+          <div className="flex-col h-[400px] overflow-y-scroll overflow-x-hidden w-1/3 p-6 text-white-500 bg-blue-950">
             <p className="text-3xl">{highlight.title}</p>
             <p className="text-justify w-[320px] mt-4">
               {highlight.description}
@@ -99,10 +99,10 @@ export default function News() {
                       <div className="!p-2.5">
                         <div className="mb-3 flex items-center justify-between px-1 md:items-start">
                           <div className="relative mb-2 h-[130px]">
-                            <p className="text-base font-semibold text-orange-600 line-clamp-2">
+                            <p className="text-base font-semibold text-white-600 line-clamp-2">
                               {article.title}
                             </p>
-                            <p className="w-[220px] text-sm font-medium text-justify text-orange-500 md:mt-2 line-clamp-4 text-ellipsis">
+                            <p className="w-[220px] text-sm font-medium text-justify text-white-500 md:mt-2 line-clamp-4 text-ellipsis">
                               {article.description}
                             </p>
                           </div>
@@ -128,7 +128,7 @@ export default function News() {
                     </div>
                   </div>
                 </div>
-                
+
               ))}
           </div>
         </div>
@@ -138,7 +138,7 @@ export default function News() {
             marginPagesDisplayed={2}
             pageRangeDisplayed={5}
             onPageChange={handlePageClick}
-            containerClassName="pagination flex bg-orange-950 text-2xl justify-center tracking-widest gap-5 text-orange-400 w-[800px]"
+            containerClassName="pagination flex bg-indigo-950 text-2xl justify-center tracking-widest gap-5 text-white-400 w-[800px]"
             activeClassName="active"
             previousLabel="<"
             nextLabel=">"

@@ -25,7 +25,10 @@
 }
 
 .card p {
-    color: rgb(254, 254, 204);
-    font-weight: 700;
-    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 13px;
+    width: 262px;
+    height: 200px;
+    overflow: auto;
 }

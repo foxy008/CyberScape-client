@@ -72,13 +72,19 @@ export default function Gallery() {
           <img
             id="wallTexture"
             src="/assets/output.jpg" />
+          <img
+            id="star1"
+            src="/assets/pngwing.com (2).png" />
+          <img
+            id="heart1"
+            src="/assets/heart-png-38780.png" />
         </a-assets>
         <a-camera position={`22 ${cameraY} 16`} rotation="0 -90 0" wasd-controls-enabled="true">
           <a-entity position="0 0 -1" geometry="primitive: sphere; radius: 0.01" material="color: #000000; shader: flat; opacity: 0.5">
           </a-entity>
         </a-camera>
         <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
-        <a-entity environment="preset: tron; fog: 0.9; dressingAmount: 50; seed: 300; playArea: 5"></a-entity>
+        <a-entity environment="preset: tron; fog: 0.8; dressingAmount: 50; seed: 300; playArea: 5"></a-entity>
 
         <a-box material="opacity: 0.5" rotation="0 90 0" position="23 7 16" width="80" height="14" depth="0.1"></a-box>
         <a-box material="opacity: 0.5" rotation="0 90 0" position="15 7.5 37" width="38" height="1" depth="0.1"></a-box>
@@ -87,20 +93,34 @@ export default function Gallery() {
         <a-box material="opacity: 0.5" rotation="0 0 0" position="17 7 56" width="12" height="14" depth="0.1"></a-box>
         <a-box material="opacity: 0.5" rotation="0 0 0" position="17.5 7.5 18" width="5" height="1" depth="0.1"></a-box>
         <a-box material="opacity: 0.5" rotation="0 0 0" position="17.5 7.5 14" width="5" height="1" depth="0.1"></a-box>
-        <a-box material="opacity: 0.9" rotation="0 0 0" position="21.5 7 18" width="3" height="14" depth="0.1"></a-box>
-        <a-box material="opacity: 0.9" rotation="0 0 0" position="21.5 7 14" width="3" height="14" depth="0.1"></a-box>
-        <a-box material="opacity: 0.9" rotation="0 90 0" position="20 5 16" width="4" height="4" depth="0.1"></a-box>
+        <a-box src="#wallTexture" rotation="0 0 0" position="21.5 7 18" width="3" height="14" depth="0.1"></a-box>
+        <a-box src="#wallTexture" rotation="0 0 0" position="21.5 7 14" width="3" height="14" depth="0.1"></a-box>
+        <a-box src="#wallTexture" rotation="0 90 0" position="20 5 16" width="4" height="4" depth="0.1"></a-box>
+        <a-box src="#wallTexture" rotation="0 90 0" position="20 12 16" width="4" height="4" depth="0.1"></a-box>
 
         <a-box animation__1="property: position; to: 20 1.5 17.5; dur: 3000; easing: linear; startEvents: mouseleave;"
-          animation__2="property: position; to: 20 1.5 16.5; dur: 3000; easing: linear; startEvents: animationcomplete__1;" rotation="0 90 0" position="20 1.5 16.5" width="1" height="3" depth="0.1"></a-box>
+          animation__2="property: position; to: 20 1.5 16.5; dur: 3000; easing: linear; startEvents: animationcomplete__1;" rotation="0 90 0" position="20 1.5 16.5" width="1" height="3" depth="0.05"></a-box>
         <a-box animation__1="property: position; to: 20 1.5 14.5; dur: 3000; easing: linear; startEvents: mouseleave;"
-          animation__2="property: position; to: 20 1.5 15.5; dur: 3000; easing: linear; startEvents: animationcomplete__1;" rotation="0 90 0" position="20 1.5 15.5" width="1" height="3" depth="0.1"></a-box>
+          animation__2="property: position; to: 20 1.5 15.5; dur: 3000; easing: linear; startEvents: animationcomplete__1;" rotation="0 90 0" position="20 1.5 15.5" width="1" height="3" depth="0.05"></a-box>
+        
+        <a-box src="#wallTexture" rotation="0 90 0" position="20 8.5 14.5" width="1" height="3" depth="0.1"></a-box>
+        <a-box src="#wallTexture" rotation="0 90 0" position="20 8.5 17.5" width="1" height="3" depth="0.1"></a-box>
+        <a-box src="#wallTexture" rotation="0 90 0" position="20 1.5 14.5" width="1" height="3" depth="0.1"></a-box>
+        <a-box src="#wallTexture" rotation="0 90 0" position="20 1.5 17.5" width="1" height="3" depth="0.1"></a-box>
+        <a-box src="#wallTexture" rotation="0 0 0" position="21.5 3 16" width="3" height="0.1" depth="4"></a-box>
+        <a-box src="#wallTexture" rotation="0 0 0" position="21.5 7 16" width="3" height="0.1" depth="4"></a-box>
+        <a-box src="#wallTexture" rotation="0 0 0" position="21.5 10 16" width="3" height="0.1" depth="4"></a-box>
+
+        <a-box animation__1="property: position; to: 20 8.5 17.5; dur: 3000; easing: linear; startEvents: mouseleave;"
+          animation__2="property: position; to: 20 8.5 16.5; dur: 3000; easing: linear; startEvents: animationcomplete__1;" rotation="0 90 0" position="20 8.5 16.5" width="1" height="3" depth="0.05"></a-box>
+        <a-box animation__1="property: position; to: 20 8.5 14.5; dur: 3000; easing: linear; startEvents: mouseleave;"
+          animation__2="property: position; to: 20 8.5 15.5; dur: 3000; easing: linear; startEvents: animationcomplete__1;" rotation="0 90 0" position="20 8.5 15.5" width="1" height="3" depth="0.05"></a-box>
 
         <a-box src="#wallTexture" rotation="90 0 90" position="18 14 16" width="84" height="14" depth="0.1"></a-box>
         <a-box src="#wallTexture" rotation="90 0 90" position="13 7 16" width="80" height="4" depth="0.1"></a-box>
         <a-box src="#wallTexture" rotation="90 0 90" position="17.5 7 16" width="4" height="5" depth="0.1"></a-box>
 
-        <a-box color="black" position="18 0 0" width="0.5" height="" depth="3"></a-box>
+        <a-box position="18 0 0" width="0.5" height="" depth="3"></a-box>
         <a-box position="18 0 32" width="0.5" height="" depth="3"></a-box>
         <a-box position="18 0 48" width="0.5" height="" depth="3"></a-box>
         <a-box position="18 0 -16" width="0.5" height="" depth="3"></a-box>

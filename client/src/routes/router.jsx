@@ -8,6 +8,7 @@ import Gallery from '../pages/Gallery'
 import TopGallery from '../pages/TopGallery'
 import News from '../pages/News'
 import { fetchProfile } from '../helpers/userMethods'
+import Swal from 'sweetalert2';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,12 @@ const router = createBrowserRouter([
           const accessToken = localStorage.getItem('access_token')
 
           if (!accessToken) {
+            Swal.fire({
+              title: 'You need to login first to access your profile.',
+              icon: 'error',
+              background: '#191c29',
+              color: '#ef9afa'
+            })
             return redirect('/')
           }
 
@@ -48,26 +55,42 @@ const router = createBrowserRouter([
           const accessToken = localStorage.getItem('access_token')
 
           if (!accessToken) {
+            Swal.fire({
+              title: 'You need to login first to access our top gallery.',
+              icon: 'error',
+              background: '#191c29',
+              color: '#ef9afa'
+            })
             return redirect('/')
           }
 
-          fetchProfile()
+          return fetchProfile()
           .then(response => {
             const { isVerified, quota } = response;
-
-            console.log({ isVerified, quota }, 'on loader');
+            console.log({ isVerified, quota });
 
             if (quota < 1) {
+              Swal.fire({
+                title: 'You need at least 1 credit to access our top gallery.',
+                icon: 'error',
+                background: '#191c29',
+                color: '#ef9afa'
+              })
               return redirect('/')
             }
 
             if (!isVerified) {
+              Swal.fire({
+                title: 'You need at verify your account first to access our top gallery',
+                icon: 'error',
+                background: '#191c29',
+                color: '#ef9afa'
+              })
               return redirect('/')
             }
 
+            return null;
           })
-
-          return null;
         },
         element: <TopGallery />
       }

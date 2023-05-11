@@ -5,13 +5,18 @@ import { Link, redirect, useNavigate } from "react-router-dom";
 import Login from '../../pages/Login';
 import axios from 'axios'
 import { fetchUser } from '../../actions/usersCreators';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content';
 
 export default function Navbar() {
   const profile = useSelector(state => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const MySwal = withReactContent(Swal);
 
-  useEffect(() => localStorage.access_token ? dispatch(fetchUser()) : null, []);
+  useEffect(() => {
+    localStorage.access_token ? dispatch(fetchUser()) : null
+  }, []);
 
   function handleLogout() {
     localStorage.removeItem('access_token');
@@ -36,11 +41,14 @@ export default function Navbar() {
       await snap.pay(response.data.token);
     } catch (error) {
       console.log(error);
+      MySwal.fire({
+        text: error.response.data.message,
+        icon: 'error',
+        background: '#191c29',
+        color: '#ef9afa'
+      })
     }
   }
-
-  useEffect(() => {
-  }, [profile])
 
   return (
     <>
@@ -78,7 +86,7 @@ export default function Navbar() {
               : <div className="dropdown">
               <label tabIndex={0} className="btn m-1">{ profile.firstName } {profile.lastName} </label>
                 <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                  <li className='disabled'><p>Balance: { profile.quota }</p></li>
+                  <li className='disabled'><p>Credit: { profile.quota }</p></li>
                   <li><a onClick={handlePayment}>Top Up</a></li>
                   <li>
                     <Link to='/profile'>

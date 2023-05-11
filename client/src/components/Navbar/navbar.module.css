@@ -10,7 +10,6 @@
   width: 100%;
   padding: 32px 64px;
   display: flex;
-  justify-content: space-between;
 }
 
 .navbarRight {
@@ -20,12 +19,15 @@
   font-size: 20px;
   font-weight: 700;
   font-family: sans-serif;
+  margin-top: 30px;
+  margin-left: 80px;
 }
 
 .navbarLeft {
   display: flex;
   align-items: center;
   gap: 28px;
+  margin-left: 120px;
 }
 
 .btn {
