@@ -86,7 +86,7 @@ export default function Navbar() {
               : <div className="dropdown">
               <label tabIndex={0} className="btn m-1">{ profile.firstName } {profile.lastName} </label>
                 <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                  <li className='disabled'><p>Balance: { profile.quota }</p></li>
+                  <li className='disabled'><p>Credit: { profile.quota }</p></li>
                   <li><a onClick={handlePayment}>Top Up</a></li>
                   <li>
                     <Link to='/profile'>

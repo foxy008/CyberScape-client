@@ -18,9 +18,14 @@
 }
 
 .card h1 {
-    color: rgb(254, 254, 204);
+    color: #fff;
     font-weight: 700;
     font-size: 22px;
+    width: 262px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card p {
