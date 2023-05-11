@@ -76,7 +76,7 @@
 .container {
   width: 100%;
   justify-content: space-between;
-  gap: 20px;
+  gap: 40px;
   display: flex;
 }
 
