@@ -17,7 +17,7 @@ export default function CollectionList() {
       <div className={styles.collectionList}>
         <div className={styles.container}>
           <div className={styles.button}>
-            <h1 className="text-orange-600">Top Items Collections</h1>
+            <h1 className="text-indigo-600">Top Items Collections</h1>
             <Link to="/top">
               <button className={styles.btn}>
                 Enter
