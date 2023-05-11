@@ -19,10 +19,10 @@
     flex-direction: column;
     margin-top: 16px;
     display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card h1 {
@@ -40,7 +40,7 @@
     color: #fff;
     font-weight: 500;
     font-size: 13px;
-    width: 262px;
+    width: 240px;
     height: 200px;
     overflow: auto;
 }
