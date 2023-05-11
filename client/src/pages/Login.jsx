@@ -84,6 +84,8 @@ export default function Login() {
             default:
                 break;
         }
+
+        console.log(body);
     }
 
     function handleFormChange() {
@@ -94,43 +96,56 @@ export default function Login() {
         } else {
             setIsLoginForm(true)
         }
+
     }
 
     if (isLoginForm) return <>
         <input type="checkbox" id="login-modal" className="modal-toggle" />
         <div className="modal">
-            <div className="modal-box">
+            <div className="modal-box relative max-w-none w-3/5 flex flex-col space-y-5 bg-neutral">
                 <label htmlFor="login-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                <h3 className="font-bold text-lg">Login to get full access to our NFT world!</h3>
+                <h3 className="font-bold text-lg text-neutral-content self-center">Login to get full access to our NFT world!</h3>
                 <form
+                    className="flex flex-col space-y-5"
                     action=""
                     onSubmit={handleSubmit}>
-                    <label htmlFor="email">
-                        <span>Email</span>
-                        <br></br>
-                        <input
-                            type="email"
-                            name="email"
-                            id="email"
-                            onChange={handleTextChange} />
-                    </label>
-                    <br></br>
-                    {
+                    <div className="flex flex-row space-x-5">
+                        <div className="form-control w-1/2">
+                            <label className="input-group flex">
+                                <span className="w-1/3 bg-neutral-focus text-neutral-content">Email</span>
+                                <input
+                                    type="email"
+                                    placeholder="Input your email here..."
+                                    className="input input-bordered w-2/3 bg-secondary text-secondary-content placeholder-secondary-content"
+                                    name="email"
+                                    id="email"
+                                    value={ body.email }
+                                    onChange={handleTextChange} />
+                            </label>
+                        </div>
+                        <div className="form-control w-1/2">
+                            <label className="input-group flex">
+                                <span className="w-1/3 bg-neutral-focus text-neutral-content">Password</span>
+                                <input
+                                    type="password"
+                                    placeholder="Input your password here..."
+                                    className="input input-bordered w-2/3 bg-secondary text-secondary-content placeholder-secondary-content"
+                                    name="password"
+                                    id="password"
+                                    value={ body.password }
+                                    onChange={handleTextChange} />
+                            </label>
+                        </div>
+                    </div>
+                    <p className="text-neutral-content self-center">Don't have an account?&nbsp;
+                        <a
+                        className="font-bold"
+                        href="#"
+                        onClick={handleFormChange}>
+                         Register Here!
+                        </a>
+                    </p>
 
-                    }
-                    <label htmlFor="password">
-                        <span>Password</span>
-                        <br></br>
-                        <input
-                            type="password"
-                            name="password"
-                            id="password"
-                            onChange={handleTextChange} />
-                    </label>
-                    <p>Don't have an account?</p>
-                    <a href="#" onClick={handleFormChange}>
-                        Register Here!
-                    </a>
 
 
                 <div className="modal-action">
@@ -148,61 +163,81 @@ export default function Login() {
     return <>
     <input type="checkbox" id="login-modal" className="modal-toggle" />
     <div className="modal">
-        <div className="modal-box">
+        <div className="modal-box relative max-w-none w-3/5 flex flex-col space-y-5 bg-neutral">
             <label htmlFor="login-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-            <h3 className="font-bold text-lg">Register to get full access to our NFT world!</h3>
+            <h3 className="font-bold text-lg text-neutral-content self-center">Register to get full access to our NFT world!</h3>
             <form
                 action=""
+                className="flex flex-col space-y-5"
                 onSubmit={handleSubmit}>
-                <label htmlFor="email">
-                    <span>Email</span>
-                    <br></br>
-                    <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        onChange={handleTextChange} />
-                </label>
-                <br></br>
-                <label htmlFor="password">
-                    <span>Password</span>
-                    <br></br>
-                    <input
-                        type="password"
-                        name="password"
-                        id="password"
-                        onChange={handleTextChange} />
-                </label>
-                <br></br>
-                <label htmlFor="text">
-                    <span>First Name</span>
-                    <br></br>
-                    <input
-                        type="text"
-                        name="firstName"
-                        id="firstName"
-                        onChange={handleTextChange} />
-                </label>
-                <br></br>
-                <label htmlFor="text">
-                    <span>Last Name</span>
-                    <br></br>
-                    <input
-                        type="text"
-                        name="lastName"
-                        id="lastName"
-                        onChange={handleTextChange} />
-                </label>
-                <br></br>
-                <p>Already have an account?</p>
-                <a
-                    href="#"
-                    onClick={handleFormChange}>
-                    Login Here!
-                </a>
+                <div className="flex flex-row space-x-5">
+                        <div className="form-control w-1/2">
+                            <label className="input-group flex">
+                                <span className="w-1/3 bg-neutral-focus text-neutral-content">First Name</span>
+                                <input
+                                    type="text"
+                                    placeholder="Input your first name here..."
+                                    className="input input-bordered w-2/3 bg-secondary text-secondary-content placeholder-secondary-content"
+                                    name="firstName"
+                                    id="firstName"
+                                    value={ body.firstName }
+                                    onChange={handleTextChange} />
+                            </label>
+                        </div>
+                        <div className="form-control w-1/2">
+                            <label className="input-group flex">
+                                <span className="w-1/3 bg-neutral-focus text-neutral-content">Last Name</span>
+                                <input
+                                    type="text"
+                                    placeholder="Input your last name here..."
+                                    className="input input-bordered w-2/3 bg-secondary text-secondary-content placeholder-secondary-content"
+                                    name="lastName"
+                                    id="lastName"
+                                    value={ body.lastName }
+                                    onChange={handleTextChange} />
+                            </label>
+                        </div>
+                    </div>
+                    <div className="flex flex-row space-x-5">
+                        <div className="form-control w-1/2">
+                            <label className="input-group flex">
+                                <span className="w-1/3 bg-neutral-focus text-neutral-content">Email</span>
+                                <input
+                                    type="email"
+                                    placeholder="Input your email here..."
+                                    className="input input-bordered w-2/3 bg-secondary text-secondary-content placeholder-secondary-content"
+                                    name="email"
+                                    id="email"
+                                    value={ body.email }
+                                    onChange={handleTextChange} />
+                            </label>
+                        </div>
+                        <div className="form-control w-1/2">
+                            <label className="input-group flex">
+                                <span className="w-1/3 bg-neutral-focus text-neutral-content">Password</span>
+                                <input
+                                    type="password"
+                                    placeholder="Input your password here..."
+                                    className="input input-bordered w-2/3 bg-secondary text-secondary-content placeholder-secondary-content"
+                                    name="password"
+                                    id="password"
+                                    value={ body.password }
+                                    onChange={handleTextChange} />
+                            </label>
+                        </div>
+                    </div>
+                <p className="text-neutral-content self-center">Already have an account?&nbsp;
+                    <a
+                        className="font-bold"
+                        href="#"
+                        onClick={handleFormChange}>
+                        Login Here!
+                    </a>
+                </p>
+
             <div className="modal-action">
                 <button
-                    type="submit" className="btn">
+                    type="submit text-bold" className="btn">
                         register
                         {/* <label  className="btn" >
 
