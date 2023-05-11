@@ -38,7 +38,7 @@ export default function Room({ position, nfts }) {
         handleAddRating(currentNFT, rating);
       }
     }
-    // console.log(profile === true, '<<<profile');
+    console.log(profile === true, '<<<profile');
 
     return (
       profile === true ? (
