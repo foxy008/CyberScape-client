@@ -20,7 +20,7 @@ export default function CollectionList() {
             <h1>Top Items Collections</h1>
             <Link to="/top">
               <button className={styles.btn}>
-                Enter Top Gallery
+                Enter
               </button>
             </Link>
           </div>
