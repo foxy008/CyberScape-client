@@ -41,7 +41,7 @@ export default function Home() {
             })
             .then(response => {
                 MySwal.fire({
-                    text: response.data.message,
+                    title: response.data.message,
                     icon: 'success',
                     background: '#191c29',
                     color: '#ef9afa',
@@ -51,7 +51,7 @@ export default function Home() {
             })
             .catch(error => {
                 MySwal.fire({
-                    text: error.response.data.message,
+                    title: error.response.data.message,
                     icon: 'error',
                     background: '#191c29',
                     color: '#ef9afa',

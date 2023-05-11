@@ -24,9 +24,9 @@ export default function News() {
           {news?.articles?.slice(0, 4).map((article, index) => (
             <NewsCard
               key={index}
-              imageUrl={article.urlToImage}
-              title={article.title}
-              // description={article.description}//
+              url={ article.url }
+              imageUrl={ article.urlToImage }
+              title={ article.title }
             />
           ))}
         </div>
