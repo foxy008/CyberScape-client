@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import getTopNFTs from "../actions/nftsCreators";
 import { fetchUserAfterQuotaReduce } from "../actions/usersCreators";
+const gateway_url = 'http://localhost:8080/'
 
 export default function TopGallery({ }) {
 
@@ -65,7 +66,7 @@ export default function TopGallery({ }) {
                                     animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
                                     animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave">
                                     <a-plane
-                                        id={`nft${i}`} position='0 0 0.03' src={`http://localhost:8080/${nfts[i]?.imageUrl}`} width="1.5" height="2"
+                                        id={`nft${i}`} position='0 0 0.03' src={gateway_url + nfts[i]?.imageUrl} width="1.5" height="2"
                                         event-set__show={`_event: mouseenter; _target: #nft${i}_info; visible: true`}
                                         event-set__hide={`_event: mouseleave; _target: #nft${i}_info; visible: false`}
                                     >

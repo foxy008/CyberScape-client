@@ -7,6 +7,7 @@ export default function Room({ position, nfts }) {
   const profile = useSelector(state => state.user);
   const { UserFavorites } = profile
   const { Ratings } = profile;
+  const gateway_url = 'http://localhost:8080/'
 
   function handleFavorite(id) {
     dispatch(fetchUserAfterFavorited(id));
@@ -89,7 +90,7 @@ export default function Room({ position, nfts }) {
           <a-box position="0 0 0.1" rotation="0 0 0" color='black' width='2.4' height='3' depth='0.05'
             animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
             animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave">
-            <a-plane position="0 0 0.04" src={`http://localhost:8080/${nfts.RoomNFTs[0].NFT.imageUrl}`}
+            <a-plane position="0 0 0.04" src={gateway_url + nfts.RoomNFTs[0].NFT.imageUrl}
               event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[0].id}_info; visible: true`}
               event-set__hide={`_event: click; _target: #nft${nfts.RoomNFTs[0].id}_info; visible: false`}
               width="2.4" height="3">
@@ -124,7 +125,7 @@ export default function Room({ position, nfts }) {
           <a-box position="-4 0 0.1" rotation="0 0 0" color='black' width='2.4' height='3' depth='0.05'
             animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
             animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave">
-            <a-plane position="0 0 0.04" src={`http://localhost:8080/${nfts.RoomNFTs[1].NFT.imageUrl}`} width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[1].id}_info; visible: true`}
+            <a-plane position="0 0 0.04" src={gateway_url + nfts.RoomNFTs[1].NFT.imageUrl} width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[1].id}_info; visible: true`}
               event-set__hide={`_event: click; _target: #nft${nfts.RoomNFTs[1].id}_info; visible: false`}></a-plane>
             <a-plane id={`nft${nfts.RoomNFTs[1].id}_info`} width="2.4" height="3" opacity='0.5' color='black'
               position="0 0 0.04" visible='false' >
@@ -155,7 +156,7 @@ export default function Room({ position, nfts }) {
             animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
             animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave">
 
-            <a-plane position="0 0 0.04" src={`http://localhost:8080/${nfts?.RoomNFTs[2].NFT.imageUrl}`} width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[2].id}_info; visible: true`}
+            <a-plane position="0 0 0.04" src={gateway_url + nfts?.RoomNFTs[2].NFT.imageUrl} width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[2].id}_info; visible: true`}
               event-set__hide={`_event: click; _target: #nft${nfts.RoomNFTs[2].id}_info; visible: false`}></a-plane>
             <a-plane id={`nft${nfts.RoomNFTs[2].id}_info`} width="2.4" height="3" opacity='0.5' color='black'
               position="0 0 0.04" visible='false' >
@@ -195,7 +196,7 @@ export default function Room({ position, nfts }) {
           <a-box position="0 0 0.08" rotation="0 180 0" color='black' width='2.4' height='3' depth='0.05'
             animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
             animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave">
-            <a-plane position="0 0 -0.04" rotation="0 180 0" src={`http://localhost:8080/${nfts?.RoomNFTs[3].NFT.imageUrl}`} width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[3].id}_info; visible: true`}
+            <a-plane position="0 0 -0.04" rotation="0 180 0" src={gateway_url + nfts?.RoomNFTs[3].NFT.imageUrl} width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[3].id}_info; visible: true`}
               event-set__hide={`_event: click; _target: #nft${nfts.RoomNFTs[3].id}_info; visible: false`}></a-plane>
             <a-plane id={`nft${nfts.RoomNFTs[3].id}_info`} width="2.4" height="3" opacity='0.5' color='black'
               position="0 0 -0.04" rotation="0 180 0" visible='false' >
@@ -224,7 +225,7 @@ export default function Room({ position, nfts }) {
             animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
             animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave">
 
-            <a-plane position="0 0 -0.08" rotation="0 180 0" src={`http://localhost:8080/${nfts?.RoomNFTs[4].NFT.imageUrl}`} width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[4].id}_info; visible: true`}
+            <a-plane position="0 0 -0.08" rotation="0 180 0" src={gateway_url + nfts?.RoomNFTs[4].NFT.imageUrl} width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[4].id}_info; visible: true`}
               event-set__hide={`_event: click; _target: #nft${nfts.RoomNFTs[4].id}_info; visible: false`}></a-plane>
 
             <a-plane id={`nft${nfts.RoomNFTs[4].id}_info`} width="2.4" height="3" opacity='0.5' color='black'
@@ -254,7 +255,7 @@ export default function Room({ position, nfts }) {
           <a-box position="4 0 0.08" rotation="0 180 0" color='black' width='2.4' height='3' depth='0.05'
             animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
             animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave">
-            <a-plane position="0 0 -0.08" src={`http://localhost:8080/${nfts?.RoomNFTs[5].NFT.imageUrl}`} rotation="0 180 0" width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[5].id}_info; visible: true`}
+            <a-plane position="0 0 -0.08" src={gateway_url + nfts?.RoomNFTs[5].NFT.imageUrl} rotation="0 180 0" width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[5].id}_info; visible: true`}
               event-set__hide={`_event: click; _target: #nft${nfts.RoomNFTs[5].id}_info; visible: false`}></a-plane>
             <a-plane id={`nft${nfts.RoomNFTs[5].id}_info`} width="2.4" height="3" opacity='0.5' color='black'
               position="0 0 -0.08" rotation="0 180 0" visible='false' >
@@ -290,7 +291,7 @@ export default function Room({ position, nfts }) {
           <a-box position="0 0 0.08" color='black' width='2.4' height='3' depth='0.05'
             animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
             animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave">
-            <a-plane position="0 0 0.04" src={`http://localhost:8080/${nfts?.RoomNFTs[6].NFT.imageUrl}`} width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[6].id}_info; visible: true`}
+            <a-plane position="0 0 0.04" src={gateway_url + nfts?.RoomNFTs[6].NFT.imageUrl} width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[6].id}_info; visible: true`}
               event-set__hide={`_event: click; _target: #nft${nfts.RoomNFTs[6].id}_info; visible: false`}></a-plane>
             <a-plane id={`nft${nfts.RoomNFTs[6].id}_info`} width="2.4" height="3" opacity='0.5' color='black'
               position="0 0 0.04" visible='false' >
@@ -319,7 +320,7 @@ export default function Room({ position, nfts }) {
           <a-box position="0 0 -0.1" color='black' width='2.4' height='3' depth='0.05'
             animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
             animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave">
-            <a-plane position="0 0 -0.04" src={`http://localhost:8080/${nfts?.RoomNFTs[7].NFT.imageUrl}`} rotation="0 180 0" width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[7].id}_info; visible: true`}
+            <a-plane position="0 0 -0.04" src={gateway_url + nfts?.RoomNFTs[7].NFT.imageUrl} rotation="0 180 0" width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[7].id}_info; visible: true`}
               event-set__hide={`_event: click; _target: #nft${nfts.RoomNFTs[7].id}_info; visible: false`}></a-plane>
             <a-plane id={`nft${nfts.RoomNFTs[7].id}_info`} width="2.4" height="3" opacity='0.5' color='black'
               position="0 0 -0.04" rotation="0 180 0" visible='false' >
@@ -352,7 +353,7 @@ export default function Room({ position, nfts }) {
           <a-box position="0 0 0.07" color='black' width='2.4' height='3' depth='0.05'
             animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
             animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave">
-            <a-plane position="0 0 0.03" src={`http://localhost:8080/${nfts?.RoomNFTs[8].NFT.imageUrl}`} width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[8].id}_info; visible: true`}
+            <a-plane position="0 0 0.03" src={gateway_url + nfts?.RoomNFTs[8].NFT.imageUrl} width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[8].id}_info; visible: true`}
               event-set__hide={`_event: click; _target: #nft${nfts.RoomNFTs[8].id}_info; visible: false`}></a-plane>
 
             <a-plane id={`nft${nfts.RoomNFTs[8].id}_info`} width="2.4" height="3" opacity='0.5' color='black'
@@ -382,7 +383,7 @@ export default function Room({ position, nfts }) {
           <a-box position="0 0 -0.08" color='black' width='2.4' height='3' depth='0.05'
             animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
             animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave">
-            <a-plane position="0 0 -0.05" src={`http://localhost:8080/${nfts?.RoomNFTs[9].NFT.imageUrl}`} rotation="0 180 0" width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[9].id}_info; visible: true`}
+            <a-plane position="0 0 -0.05" src={gateway_url + nfts?.RoomNFTs[9].NFT.imageUrl} rotation="0 180 0" width="2.4" height="3" event-set__show={`_event: mouseenter; _target: #nft${nfts.RoomNFTs[9].id}_info; visible: true`}
               event-set__hide={`_event: click; _target: #nft${nfts.RoomNFTs[9].id}_info; visible: false`}></a-plane>
             <a-plane id={`nft${nfts.RoomNFTs[9].id}_info`} width="2.4" height="3" opacity='0.5' color='black'
               position="0 0 -0.04" rotation="0 180 0" visible='false' >
