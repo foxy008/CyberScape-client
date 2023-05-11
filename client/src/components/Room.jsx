@@ -8,6 +8,7 @@ export default function Room({ position, nfts }) {
   const { UserFavorites } = profile
   const { Ratings } = profile;
   const gateway_url = 'http://localhost:8080/'
+  
 
   function handleFavorite(id) {
     dispatch(fetchUserAfterFavorited(id));
@@ -38,10 +39,10 @@ export default function Room({ position, nfts }) {
         handleAddRating(currentNFT, rating);
       }
     }
-    console.log(profile === true, '<<<profile');
+    // console.log(profile === true, '<<<profile');
 
     return (
-      profile === true ? (
+       
         <>
           <a-plane
             src="#heart1"
@@ -65,7 +66,6 @@ export default function Room({ position, nfts }) {
             />
           ))}
         </>
-      ) : null
     );
   }
 
