@@ -42,7 +42,7 @@ export default function Navbar() {
     } catch (error) {
       console.log(error);
       MySwal.fire({
-        text: error.response.data.message,
+        title: error.response.data.message,
         icon: 'error',
         background: '#191c29',
         color: '#ef9afa'
@@ -86,14 +86,14 @@ export default function Navbar() {
               : <div className="dropdown dropdown-end  text-neutral-content w-50">
               <label tabIndex={0} className="btn m-1">{ profile.firstName } {profile.lastName} </label>
                 <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-neutral rounded-box">
-                  <li className='text-lime-500'><p>Credit: { profile.quota }</p></li>
-                  <li><a onClick={handlePayment} className='hover:bg-neutral-focus'>Top Up</a></li>
-                  <li className='hover:bg-neutral-focus'>
+                  <li className='text-lime-500 text-base'><p>Credit: { profile.quota }</p></li>
+                  <li><a onClick={handlePayment} className='hover:bg-neutral-focus text-base'>Top Up</a></li>
+                  <li className='hover:bg-neutral-focus text-base'>
                     <Link to='/profile'>
                         Profile
                     </Link>
                   </li>
-                  <li className='hover:bg-neutral-focus'>
+                  <li className='hover:bg-neutral-focus text-base'>
                     <a onClick={handleLogout}>Sign Out</a>
                   </li>
                 </ul>

@@ -128,7 +128,7 @@ export function fetchUserAfterQuotaAdd(order_id, status_code) {
             }
 
             Swal.fire({
-                title: 'Transaction failed! Please try again!',
+                title: 'Transaction unsuccessful! Please try again!',
                 icon: 'error',
                 background: '#191c29',
                 color: '#ef9afa',
