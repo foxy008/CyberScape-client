@@ -12,7 +12,7 @@ export default function RecentCollection() {
       <div className={styles.recentCollection}>
         <div className={styles.container}>
           <div className={styles.button}>
-            <h1 className="text-orange-600">Recent Artist Collections</h1>
+            <h1 className="text-indigo-600">Recent Artist Collections</h1>
             <button className={styles.btn}>
               <Link to="/gallery">Enter</Link>
             </button>

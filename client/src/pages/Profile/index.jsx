@@ -24,11 +24,11 @@ export default function Profile() {
                     alt=""
                   />
                   <div className="flex flex-col text-cyan-100 self-center ml-4">
-                    <p className="text-2xl  text-cyan-400">
+                    <p className="text-2xl text-fuchsia-300">
                       {`${profile.firstName} ${profile.lastName}`}
                     </p>
-                    <p className=" text-cyan-200">{profile.email}</p>
-                    <p className="text-violet-500">Credit : {profile.quota}</p>
+                    <p className="text-fuchsia-300">{profile.email}</p>
+                    <p className="text-green-400">Credit : {profile.quota}</p>
                   </div>
                 </div>
                 <FavoriteList />
