@@ -76,7 +76,7 @@ export default function Gallery() {
             paddingTop: "100px",
             textAlign: "center",
             fontFamily: "Orbitron",
-            color: "white",
+            color: "rgb(96 165 250)",
           }}
         >
           Main Gallery

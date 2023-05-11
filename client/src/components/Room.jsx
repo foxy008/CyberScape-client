@@ -38,31 +38,34 @@ export default function Room({ position, nfts }) {
         handleAddRating(currentNFT, rating);
       }
     }
+    // console.log(profile === true, '<<<profile');
 
     return (
-      <>
-        <a-plane
-          src="#heart1"
-          opacity={favoriteNFT ? '1' : '0.5'}
-          onClick={() => favoriteNFT ? handleUnfavorite(currentNFT) : handleFavorite(currentNFT)}
-          position="1 -1.3 0.02"
-          width="0.2"
-          height="0.2"
-        />
-
-        {[1, 2, 3, 4, 5].map((rating, index) => (
+      profile === true ? (
+        <>
           <a-plane
-            key={index}
-            src="#star1"
-            opacity={ratingNFT?.value >= rating ? "1" : "0.5"}
-            onClick={() => handleNFTClick(ratingNFT, rating)}
-            color="yellow"
-            position={`${-1 + index * 0.3} -1.3 0.02`}
+            src="#heart1"
+            opacity={favoriteNFT ? '1' : '0.5'}
+            onClick={() => favoriteNFT ? handleUnfavorite(currentNFT) : handleFavorite(currentNFT)}
+            position="1 -1.3 0.02"
             width="0.2"
             height="0.2"
           />
-        ))}
-      </>
+    
+          {[1, 2, 3, 4, 5].map((rating, index) => (
+            <a-plane
+              key={index}
+              src="#star1"
+              opacity={ratingNFT?.value >= rating ? "1" : "0.5"}
+              onClick={() => handleNFTClick(ratingNFT, rating)}
+              color="yellow"
+              position={`${-1 + index * 0.3} -1.3 0.02`}
+              width="0.2"
+              height="0.2"
+            />
+          ))}
+        </>
+      ) : null
     );
   }
 

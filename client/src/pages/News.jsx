@@ -37,7 +37,7 @@ export default function News() {
     <>
       <GalaxyBackground>
         <section>
-          <p className="text-4xl tracking-wider text-purple-300 ml-20 mt-20" style={{ fontFamily: "Orbitron"}}>
+          <p className="text-4xl tracking-wider font-semibold text-indigo-700 ml-20 mt-20" style={{ fontFamily: "Orbitron"}}>
             NFT News
           </p>
           <div className="flex justify-between ml-20 mr-20 mt-10">
@@ -50,22 +50,22 @@ export default function News() {
               src={highlight.urlToImage}
               alt={highlight.title}
             />
-            <div className="flex-col h-[400px] overflow-y-scroll overflow-x-hidden w-1/3 p-6 text-orange-600 bg-gray-900 rounded-r-xl">
+            <div className="flex-col h-[400px] overflow-y-scroll overflow-x-hidden w-1/3 p-6 text-indigo-600 bg-gray-900 rounded-r-xl">
               <p className="text-2xl text-justify font-semibold" style={{ fontFamily: "Orbitron"}}>
                 {highlight.title}
               </p>
-              <p className="text-justify text-sm text-orange-400 w-[320px] mt-4" style={{ fontFamily: "Orbitron"}}>
+              <p className="text-justify text-sm text-purple-300 w-[320px] mt-4" style={{ fontFamily: "Orbitron"}}>
                 {highlight.description}
               </p>
               <div className="flex justify-between mt-12" style={{ fontFamily: "Orbitron"}}>
                 <div className="flex flex-col">
-                  <p className="!mb-1 self-start text-base font-bold text-cyan-400 line-clamp-1">
+                  <p className="!mb-1 self-start text-sm font-semibold text-purple-300 line-clamp-1">
                     Author:
                     <span className="ml-2">
                       {highlight.author ? highlight.author : `-`}
                     </span>
                   </p>
-                  <p className="text-orange-400">Published At: { formattedDate }</p>
+                  <p className="text-indigo-400 font-semibold tracking-wide text-xs">Published At: { formattedDate }</p>
                 </div>
                 <button
                   onClick={() => window.open(article.url, "_blank")}
@@ -116,17 +116,17 @@ export default function News() {
                         <div className="!p-2.5" style={{ fontFamily: "Orbitron"}}>
                           <div className="mb-3 flex items-center justify-between px-1 md:items-start">
                             <div className="relative mb-2 h-[130px]">
-                              <p className="text-base font-semibold text-orange-600 line-clamp-2">
+                              <p className="text-base font-semibold text-indigo-600 line-clamp-2">
                                 {article.title}
                               </p>
-                              <p className="w-[220px] text-sm font-medium text-justify text-orange-500 md:mt-2 line-clamp-4 text-ellipsis">
+                              <p className="w-[220px] text-xs font-medium text-justify text-purple-400 md:mt-2 line-clamp-5 text-ellipsis">
                                 {article.description}
                               </p>
                             </div>
                           </div>
                           <div className="flex flex-col">
                             <div className="flex">
-                              <p className="!mb-1 self-start text-sm font-bold text-cyan-400 line-clamp-1">
+                              <p className="!mb-1 self-start text-xs font-semibold text-purple-300 line-clamp-1">
                                 Author:
                                 <span className="ml-2">
                                   {article.author ? article.author : `-`}

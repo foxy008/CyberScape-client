@@ -10,9 +10,9 @@ export default function Banner() {
       <div className={styles.banner}>
         <div className={styles.container}>
           <div className={styles.bannerLeft}>
-            <h1>NFT Virtual Gallery</h1>
+            <h1 className="text-indigo-600">NFT Virtual Gallery</h1>
 
-            <p>
+            <p className="text-purple-400">
               CyberScape offers users a novel and engaging way to explore and
               appreciate the world of NFT art
             </p>

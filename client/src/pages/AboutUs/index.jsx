@@ -6,11 +6,11 @@ export default function AboutUs() {
     <>
       <GalaxyBackground>
         <div className={styles.bannerWrapper}>
-          <h1>About Us</h1>
+          <h1 className="text-blue-400">About Us</h1>
           <div className={styles.banner}>
             <div className={styles.container}>
               <div>
-                <p>
+                <p className="text-purple-300">
                   Welcome to CyberScape! Our mission is to provide a platform
                   for artists to showcase and sell their non-fungible tokens
                   (NFTs) and for collectors to discover and invest in unique
@@ -22,7 +22,7 @@ export default function AboutUs() {
                   was not possible before.
                 </p>
                 <br />
-                <p>
+                <p className="text-purple-300">
                   Our NFT gallery features a curated selection of NFTs from some
                   of the most talented and innovative artists working today.
                   Each NFT is unique and one-of-a-kind, stored on a secure
@@ -35,7 +35,7 @@ export default function AboutUs() {
                   market trends.
                 </p>
                 <br />
-                <p>
+                <p className="text-purple-300">
                   Thank you for visiting CyberScape NFT gallery and supporting
                   the artists who make it possible. We hope our platform will
                   inspire you to explore the possibilities of NFTs and engage
@@ -46,10 +46,10 @@ export default function AboutUs() {
           </div>
         </div>
         <div className={styles.bannerWrapper}>
-          <h1>Price</h1>
+          <h1 className="text-blue-400">Price</h1>
           <div className={styles.banner}>
             <div className={styles.container}>
-              <div>
+              <div className="text-purple-300">
                 Rp. 100.000 / Credit
               </div>
             </div>
