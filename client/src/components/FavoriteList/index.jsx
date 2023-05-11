@@ -22,7 +22,7 @@ export default function CollectionList() {
       <div className={styles.favoriteList}>
         <div className={styles.container}>
           <div>
-            <p className="text-center">
+            <p className="flex justify-center self-center mt-20 text-orange-400">
               No favorites... Browse our collection and add them as your
               favorite
             </p>
@@ -39,7 +39,7 @@ export default function CollectionList() {
         <div className={styles.favoriteList}>
           <div className={styles.container}>
             <div>
-              <h1> My Favorite Collections</h1>
+              <h1 className="text-orange-600"> My Favorite Collections</h1>
             </div>
             <div className={styles.cards}>
               <div className="carousel gap-5 carousel-end rounded-box mt-5">
