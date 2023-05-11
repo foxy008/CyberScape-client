@@ -44,7 +44,7 @@ export default function TopGallery({}) {
             paddingTop: "50px",
             textAlign: "center",
             fontFamily: "Orbitron",
-            color: "white",
+            color: "rgb(96 165 250)",
           }}
         >
           Top Collection
