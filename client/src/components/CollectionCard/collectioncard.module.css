@@ -18,7 +18,7 @@
 }
 
 .card h1 {
-    color: #fff;
+    color: #FB923C;;
     font-weight: 700;
     font-size: 22px;
     width: 262px;
@@ -43,7 +43,7 @@
   .btn {
     width: 200px;
     height: 45px;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Orbitron';
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 2.5px;
