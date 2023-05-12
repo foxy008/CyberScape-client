@@ -20,7 +20,7 @@ export default function Login() {
     function handleSubmit(e) {
         e.preventDefault();
 
-        console.log(body);
+        // console.log(body);
 
         if (isLoginForm) {
             handleLogin(body)
@@ -92,11 +92,11 @@ export default function Login() {
                 break;
         }
 
-        console.log(body);
+        // console.log(body);
     }
 
     function handleFormChange() {
-        console.log(body);
+        // console.log(body);
 
         if (isLoginForm) {
             setIsLoginForm(false)

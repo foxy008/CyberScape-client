@@ -12,7 +12,7 @@ export default function Profile() {
   if (profile)
     return (
       <>
-        {console.log(profile)}
+        {/* {console.log(profile)} */}
         <GalaxyBackground>
           <div className={styles.wrapper}>
             <div className={styles.profile}>

@@ -58,7 +58,7 @@ export default function Gallery() {
   return (
     <>
       <GalaxyBackground>
-        {
+        {/* {
           !rooms
             ? null
             : !rooms[2]
@@ -69,7 +69,7 @@ export default function Gallery() {
         {
           !profile ? null : console.log(profile, "<-- profile")
           // Buat cek apakah profile dapet di fetch, uncomment kalo ngak mau keliatan di console
-        }
+        } */}
         <div
           style={{
             fontSize: "50px",

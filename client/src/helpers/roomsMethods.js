@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export async function fetchRooms(query) {
-    console.log(`${import.meta.env.VITE_SERVER_URL}/rooms${ query ? '?recent=true' : null }`, '<-- di roomMethods');
+    // console.log(`${import.meta.env.VITE_SERVER_URL}/rooms${ query ? '?recent=true' : null }`, '<-- di roomMethods');
     return await axios.get(`${import.meta.env.VITE_SERVER_URL}/rooms${ query ? '?recent=true' : '' }`)
 }
 

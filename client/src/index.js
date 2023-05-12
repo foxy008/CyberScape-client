@@ -17,9 +17,9 @@ const runApp = async () => {
     const metadata = JSON.parse(nft.metadata);
 
     if (metadata && metadata.creator) {
-      console.log(`Artist's name: ${metadata.creator}`);
+      // console.log(`Artist's name: ${metadata.creator}`);
     } else {
-      console.log("Artist's name not found in metadata.");
+      // console.log("Artist's name not found in metadata.");
     }
   }
 };

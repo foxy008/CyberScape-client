@@ -8,13 +8,13 @@ export async function fetchProfile() {
         }
     });
 
-    console.log(response);
+    // console.log(response);
     return response.data;
 }
 
 export async function handleLogin(body) {
     const response = await axios.post(`${import.meta.env.VITE_SERVER_URL}/users/login`, body)
-    console.log(response);
+    // console.log(response);
     return response.data;
 }
 

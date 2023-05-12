@@ -71,7 +71,7 @@ export default function Home() {
     }, [])
 
     return <>
-        {
+        {/* {
             !topNFTs ? null: console.log(topNFTs, '<-- topNFTs')
             // Buat cek apakah topNFTs dapet di fetch, uncomment kalo ngak mau keliatan di console
         }
@@ -82,7 +82,7 @@ export default function Home() {
         {
             !rooms ? null: console.log(rooms, '<-- rooms')
             // Buat cek apakah profile dapet di fetch, uncomment kalo ngak mau keliatan di console
-        }
+        } */}
         <GalaxyBackground>
             <Banner />
             <CollectionList />

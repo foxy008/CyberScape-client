@@ -69,7 +69,7 @@ const router = createBrowserRouter([
           return fetchProfile()
           .then(response => {
             const { isVerified, quota } = response;
-            console.log({ isVerified, quota });
+            // console.log({ isVerified, quota });
 
             if (quota < 1) {
               Swal.fire({

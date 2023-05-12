@@ -37,10 +37,10 @@ export default function Navbar() {
         }
       });
 
-      console.log(response);
+      // console.log(response);
       await snap.pay(response.data.token);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       MySwal.fire({
         title: error.response.data.message,
         icon: 'error',
@@ -52,10 +52,10 @@ export default function Navbar() {
 
   return (
     <>
-      {
+      {/* {
             !profile ? null: console.log(profile, '<-- profile')
             // Buat cek apakah profile dapet di fetch, uncomment kalo ngak mau keliatan di console
-      }
+      } */}
       <div className={styles.navbar}>
         <div className={styles.container}>
           <div className={styles.navbarLeft}>
