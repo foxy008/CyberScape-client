@@ -92,6 +92,14 @@ export function fetchUserAfterEditedRating(id, rating) {
 export function fetchUserAfterQuotaReduce() {
     return function(dispatch) {
         handleQuotaReduce()
+        .then(() => {
+            Swal.fire({
+                title: "You've used 1 credit to enter Top Gallery",
+                background: '#191c29',
+                color: '#ef9afa',
+                confirmButtonColor: 'rgb(132 204 22)'
+            })
+        })
         .then(() => dispatch(fetchUser()))
         .catch(error => {
             if (error.response) {
